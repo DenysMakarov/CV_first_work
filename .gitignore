@@ -1,2 +1,5 @@
-node_modules,
+# first
+node_modules/
+
+#second
 src/fonts/fontawesome-free-5.0.13/
