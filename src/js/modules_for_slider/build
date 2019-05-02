@@ -1,0 +1,14 @@
+
+export class Build {
+    createNewElement(tag, addClass=null, inner=null, attr) {
+        let el = document.createElement(tag);
+        el.className = (addClass) ? addClass:"";
+        el.innerHTML = (inner)?inner:"";
+        if (attr){
+            attr.map((attrEl)=>el.setAttribute(attrEl.name, attrEl.value))
+        }
+        return el;
+    }
+}
+
+
