@@ -14,6 +14,7 @@ function sw(){
 
 
 let buttonShowConten = document.getElementById("show_content");
+let duttonSubmit = document.getElementById("button_submit");
 buttonShowConten.addEventListener("click", sw);
 
 let submitHandler =(e)=>{
@@ -26,6 +27,7 @@ let submitHandler =(e)=>{
     const password = document.getElementById("check_password").value;
     let passErr = [];
     const redPass = document.getElementById("error_password");
+
 
 
 // email
@@ -64,9 +66,11 @@ let submitHandler =(e)=>{
     }
 
     if (passErr.length == 0 && emailErr.length == 0){
-        buttonShowConten.addEventListener("click",  showConteht);
-        buttonShowConten.style.backgroundColor = "green";
-        buttonShowConten.addEventListener("click",  showConteht);
+        buttonShowConten.style.animationName = "submit_untouch"
+        duttonSubmit.style.animationName = "submit_touch";
+    }else{
+        duttonSubmit.style.animationName = "submit_untouch";
+        buttonShowConten.style.animationName = "submit_touch"
     }
 
 };
@@ -75,6 +79,8 @@ let submitHandler =(e)=>{
 
 document.addEventListener("submit", submitHandler, false);
 let buttonSub = document.getElementById("button_submit").addEventListener("submit",  submitHandler);
+
+//media
 
 
 

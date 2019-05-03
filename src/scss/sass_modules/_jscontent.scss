@@ -180,17 +180,37 @@
   right: 30%;
   transition: 0.5s;
   font-family: 'Open Sans Condensed', sans-serif;
-
+  font-size: 21px;
+  color: #623232;
 
   background: #F4E4CB;
   box-shadow:
-          -1px 0px rgb(98,50,50), -1px 1px rgb(71,36,36),
-          -2px 1px rgb(97,49,49), -2px 2px rgb(70,35,35),
-          -3px 2px rgb(96,48,48), -3px 3px rgb(69,34,34),
-          -4px 3px rgb(95,47,47), -4px 4px rgb(68,33,33),
-          -5px 4px rgb(94,46,46), -5px 5px rgb(67,32,32),
-          -6px 5px rgb(93,45,45), -6px 6px rgb(66,31,31),
-          -7px 6px rgb(92,44,44), -7px 7px rgb(65,30,30);
+          -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+          -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+          -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+          -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+          -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+          -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+          -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),
+          -8px 7px rgb(54,24,12), -8px 8px rgb(77,37,21),
+          -9px 8px rgb(53,23,11), -9px 9px rgb(76,36,20),
+          -10px 9px rgb(52,22,10), -10px 10px rgb(75,35,19),
+          -11px 10px rgb(51,21,9), -11px 11px rgb(74,34,18),
+          -12px 11px rgb(50,20,8), -12px 12px rgb(73,33,17),
+          -13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
+          -14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
+          -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
+
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  -webkit-animation-name: submit_untouch;
+  -moz-animation-name: submit_untouch;
+  -o-animation-name: submit_untouch;
+  animation-name: submit_untouch;
+
 
 
   @media screen and (max-width: 1024px){
@@ -204,11 +224,70 @@
     height: 50px;
     left: 5%;
     top: 88%;
-    //bottom: 0!important;
-    //position: relative !important;
   }
   @media screen and (max-width: 375px){
     width: 180px;
+  }
+  
+  @keyframes submit_untouch {
+    0%{
+      box-shadow:
+              -1px 0px rgb(98,50,50), -1px 1px rgb(71,36,36),
+              -2px 1px rgb(97,49,49), -2px 2px rgb(70,35,35),
+              -3px 2px rgb(96,48,48), -3px 3px rgb(69,34,34),
+              -4px 3px rgb(95,47,47), -4px 4px rgb(68,33,33),
+              -5px 4px rgb(94,46,46), -5px 5px rgb(67,32,32),
+              -6px 5px rgb(93,45,45), -6px 6px rgb(66,31,31),
+              -7px 6px rgb(92,44,44), -7px 7px rgb(65,30,30);
+    }
+    100%{
+      box-shadow:
+              -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+              -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+              -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+              -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+              -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+              -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+              -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),
+              -8px 7px rgb(54,24,12), -8px 8px rgb(77,37,21),
+              -9px 8px rgb(53,23,11), -9px 9px rgb(76,36,20),
+              -10px 9px rgb(52,22,10), -10px 10px rgb(75,35,19),
+              -11px 10px rgb(51,21,9), -11px 11px rgb(74,34,18),
+              -12px 11px rgb(50,20,8), -12px 12px rgb(73,33,17),
+              -13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
+              -14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
+              -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
+    }
+  }
+  @keyframes submit_touch{
+    0%{
+      box-shadow:
+              -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+              -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+              -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+              -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+              -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+              -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+              -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),
+              -8px 7px rgb(54,24,12), -8px 8px rgb(77,37,21),
+              -9px 8px rgb(53,23,11), -9px 9px rgb(76,36,20),
+              -10px 9px rgb(52,22,10), -10px 10px rgb(75,35,19),
+              -11px 10px rgb(51,21,9), -11px 11px rgb(74,34,18),
+              -12px 11px rgb(50,20,8), -12px 12px rgb(73,33,17),
+              -13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
+              -14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
+              -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
+    }
+    100%{
+      box-shadow:
+              -1px 0px rgb(98,50,50), -1px 1px rgb(71,36,36),
+              -2px 1px rgb(97,49,49), -2px 2px rgb(70,35,35),
+              -3px 2px rgb(96,48,48), -3px 3px rgb(69,34,34),
+              -4px 3px rgb(95,47,47), -4px 4px rgb(68,33,33),
+              -5px 4px rgb(94,46,46), -5px 5px rgb(67,32,32),
+              -6px 5px rgb(93,45,45), -6px 6px rgb(66,31,31),
+              -7px 6px rgb(92,44,44), -7px 7px rgb(65,30,30);
+    }
   }
 }
 
@@ -228,18 +307,35 @@
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  transition: 0.5s;
+  transition: 1s;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-timing-function: ease;
+  -webkit-animation-name: submit_touch;
+  -moz-animation-name: submit_touch;
+  -o-animation-name: submit_touch;
+  animation-name: submit_touch;
 
 
   background: #F4E4CB;
   box-shadow:
-          -1px 0px rgb(98,50,50), -1px 1px rgb(71,36,36),
-          -2px 1px rgb(97,49,49), -2px 2px rgb(70,35,35),
-          -3px 2px rgb(96,48,48), -3px 3px rgb(69,34,34),
-          -4px 3px rgb(95,47,47), -4px 4px rgb(68,33,33),
-          -5px 4px rgb(94,46,46), -5px 5px rgb(67,32,32),
-          -6px 5px rgb(93,45,45), -6px 6px rgb(66,31,31),
-          -7px 6px rgb(92,44,44), -7px 7px rgb(65,30,30);
+  -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+  -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+  -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+  -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+  -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+  -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+  -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),
+  -8px 7px rgb(54,24,12), -8px 8px rgb(77,37,21),
+  -9px 8px rgb(53,23,11), -9px 9px rgb(76,36,20),
+  -10px 9px rgb(52,22,10), -10px 10px rgb(75,35,19),
+  -11px 10px rgb(51,21,9), -11px 11px rgb(74,34,18),
+  -12px 11px rgb(50,20,8), -12px 12px rgb(73,33,17),
+  -13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
+  -14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
+  -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
 
   @media screen and (max-width: 1024px){
     right: 3%;
