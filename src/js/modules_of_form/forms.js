@@ -38,8 +38,10 @@ let submitHandler =(e)=>{
 
     if (emailErr.length > 0) {
         redEmail.innerHTML = emailErr;
+        redEmail. style.color = "red"
     } else{
         redEmail.innerHTML = "all right"
+        redEmail. style.color = "green"
     }
 
     // password
@@ -55,8 +57,10 @@ let submitHandler =(e)=>{
 
     if (passErr.length > 0) {
         redPass.innerHTML = passErr;
+        redPass. style.color = "red"
     } else{
-        redPass.innerHTML = "all right"
+        redPass.innerHTML = "all right";
+        redPass. style.color = "green"
     }
 
     if (passErr.length == 0 && emailErr.length == 0){
