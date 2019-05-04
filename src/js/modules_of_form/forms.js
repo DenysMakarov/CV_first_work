@@ -1,24 +1,19 @@
-let showConteht = (e) =>{
-    e.preventDefault();
-    console.log("show")
-};
 
-let showConteht1 =(e) =>{
-    e.preventDefault();
-    console.log("showkjkljk;j")
-};
 
-function sw(){
-    document.getElementById("jsItem_box")
-};
 
 
 let buttonShowConten = document.getElementById("show_content");
-let duttonSubmit = document.getElementById("button_submit");
-buttonShowConten.addEventListener("click", sw);
+let buttonSubmit = document.getElementById("button_submit");
+//
+//
+//
+// buttonSubmit.addEventListener("click", sw, wrong_submit);
 
 let submitHandler =(e)=>{
     e.preventDefault();
+
+    // let buttonShowConten = document.getElementById("show_content");
+    // let buttonSubmit = document.getElementById("button_submit");
 
     const email = document.getElementById("check_email").value;
     let emailErr = [];
@@ -27,7 +22,6 @@ let submitHandler =(e)=>{
     const password = document.getElementById("check_password").value;
     let passErr = [];
     const redPass = document.getElementById("error_password");
-
 
 
 // email
@@ -66,25 +60,45 @@ let submitHandler =(e)=>{
     }
 
     if (passErr.length == 0 && emailErr.length == 0){
-        buttonShowConten.style.animationName = "submit_untouch"
-        duttonSubmit.style.animationName = "submit_touch";
-    }else{
-        duttonSubmit.style.animationName = "submit_untouch";
-        buttonShowConten.style.animationName = "submit_touch"
+        loginFalse(buttonShowConten, buttonSubmit);
+        buttonSubmit.addEventListener("click",  wrong(buttonSubmit), false);
+    }else {
+        loginTrue(buttonShowConten, buttonSubmit);
+    }
+
+    if (passErr.length != 0 && emailErr.length != 0){
+        buttonSubmit.addEventListener("submit",  wrong_submit(buttonSubmit), false);
     }
 
 };
 
 
-
 document.addEventListener("submit", submitHandler, false);
-let buttonSub = document.getElementById("button_submit").addEventListener("submit",  submitHandler);
+// buttonSubmit.addEventListener("submit",  setKeyframes(buttonSubmit), false);
 
 //media
 
+function wrong(buttonSubmit) {
+    buttonSubmit.style.animationName = "wrong";
+    console.log("wrong")
+
+}
+
+
+function wrong_submit(buttonSubmit) {
+    buttonSubmit.addEventListener("click", (e)=>{
+        buttonSubmit.style.animationName = "submit_wrong";
+
+        setTimeout(function () {
+            buttonSubmit.style.animationName = "wrong";
+        }, 1000);
+        console.log(",")
+    })
+}
 
 
 // FUNCTIOUN TEST
+
 
 // test email //
 function isSubmitDog(pass){
@@ -104,3 +118,30 @@ function isUpperWord(pass) {
 function isNumber(pass) {
     return /[1-9]/.test(pass)
 }
+
+//fun add / remove class
+
+function loginTrue(buttonShowConten, buttonSubmit) {
+    buttonShowConten.classList.remove("button_submit_untouch");
+    buttonSubmit.classList.remove("button_submit_touch");
+
+    buttonShowConten.classList.add("button_submit_touch");
+    buttonSubmit.classList.add("button_submit_untouch");
+}
+function loginFalse(buttonShowConten, buttonSubmit) {
+    buttonShowConten.classList.remove("button_submit_touch");
+    buttonSubmit.classList.remove("button_submit_untouch");
+
+    buttonShowConten.classList.add("button_submit_untouch");
+    buttonSubmit.classList.add("button_submit_touch");
+}
+
+
+
+// let x = getComputedStyle(document.getElementById("button_submit"));
+// let y = getComputedStyle(document.getElementById("show_content"));
+// console.log(y.width)
+// console.log(x.width)
+// if (x.width == "100px"){
+//     console.log("100px")
+// }
