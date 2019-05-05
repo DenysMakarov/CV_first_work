@@ -183,6 +183,7 @@
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 21px;
   color: #623232;
+  z-index: 100;
 
   background: #F4E4CB;
   box-shadow:
@@ -203,7 +204,7 @@
           -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
 
 
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-direction: normal;
   animation-timing-function: ease;
@@ -219,8 +220,8 @@
   @media screen and (max-width: 426px){
     width: 210px;
     height: 50px;
-    left: 5%;
-    top: 88%;
+    left: 5.5%;
+    top: 90%;
   }
   @media screen and (max-width: 375px){
     width: 180px;
@@ -230,13 +231,16 @@
     0%{
       margin: 0 0 0 0;
     }
-    30%{
-      margin: 0 50px 0 0;
+    20%{
+      margin: 0 0 0 20px;
+    }
+    40%{
+      margin: 0 20px 0 0;
     }
     60%{
-      margin: 0 0 0 50px;
+      margin: 0 0 0 20px;
     }
-    90%{
+    80%{
       margin: 0 20px 0 0;
     }
     100%{
@@ -245,25 +249,16 @@
 
   }
 
-  @keyframes submit_w {
-    0%{
-      background: red;
-    }
-    100%{
-      background: green;
-    }
-  }
+  //@keyframes submit_w {
+  //  0%{
+  //    background: red;
+  //  }
+  //  100%{
+  //    background: green;
+  //  }
+  //}
 
 }
-
-
-
-
-
-
-
-
-
 
 
 // button content
@@ -283,6 +278,9 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   transition: 1s;
+  z-index: 10;
+  color: #623232;
+
 
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -293,33 +291,24 @@
   -o-animation-name: submit_touch;
   animation-name: submit_touch;
 
-
   background: #F4E4CB;
-  //box-shadow:
-  //-1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
-  //-2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
-  //-3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
-  //-4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
-  //-5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
-  //-6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
-  //-7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),
-  //-8px 7px rgb(54,24,12), -8px 8px rgb(77,37,21),
-  //-9px 8px rgb(53,23,11), -9px 9px rgb(76,36,20),
-  //-10px 9px rgb(52,22,10), -10px 10px rgb(75,35,19),
-  //-11px 10px rgb(51,21,9), -11px 11px rgb(74,34,18),
-  //-12px 11px rgb(50,20,8), -12px 12px rgb(73,33,17),
-  //-13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
-  //-14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
-  //-15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
 
   @media screen and (max-width: 1024px){
     right: 3%;
   }
-  @media screen and (max-width: 425px){
-    top: 39%;
+  @media screen and (max-width: 769px){
+    width: 280px;
+  }
+  @media screen and (max-width: 426px){
+    top: 38%;
     right: 25px;
-    width: 160px;
-    height: 220px;
+    width: 150px;
+    height: 233px;
+  }
+
+  @media screen and (max-width: 376px){
+    width: 130px;
+    font-size: 17px;
   }
   @media screen and (max-width: 320px){
     width: 100px;
@@ -333,6 +322,7 @@
 
 
 .button_submit_touch{
+
   top: 30%;
   box-shadow:
   -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
@@ -341,9 +331,26 @@
   -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
   -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
   -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
-  -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22),}
+  -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22);
+
+  background: rgba(189, 185, 181, 0.3);
+  color: rgba(189, 185, 181, 1);
+
+  @media screen and (max-width: 426px){
+    box-shadow:
+            -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+            -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+            -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+            -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+            -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+            -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+            -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22);
+  }
+
+}
 
 .button_submit_untouch{
+  cursor: pointer;
   top: 28.5%;
   box-shadow:
           -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
@@ -361,4 +368,21 @@
           -13px 12px rgb(49,19,7), -13px 13px rgb(72,32,16),
           -14px 13px rgb(48,18,6), -14px 14px rgb(71,31,15),
           -15px 14px rgb(47,17,5), -15px 15px rgb(70,30,14);
+
+  @media screen and (max-width: 426px){
+    box-shadow:
+            -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
+            -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
+            -3px 2px rgb(59,29,17), -3px 3px rgb(82,42,26),
+            -4px 3px rgb(58,28,16), -4px 4px rgb(81,41,25),
+            -5px 4px rgb(57,27,15), -5px 5px rgb(80,40,24),
+            -6px 5px rgb(56,26,14), -6px 6px rgb(79,39,23),
+            -7px 6px rgb(55,25,13), -7px 7px rgb(78,38,22);
+  }
+}
+
+
+///////////////////////////
+.jsItem_box{
+  //z-index: 1000000000000;
 }

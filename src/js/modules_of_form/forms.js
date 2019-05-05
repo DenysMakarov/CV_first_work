@@ -12,9 +12,6 @@ let buttonSubmit = document.getElementById("button_submit");
 let submitHandler =(e)=>{
     e.preventDefault();
 
-    // let buttonShowConten = document.getElementById("show_content");
-    // let buttonSubmit = document.getElementById("button_submit");
-
     const email = document.getElementById("check_email").value;
     let emailErr = [];
     const redEmail = document.getElementById("error_email");
@@ -23,8 +20,7 @@ let submitHandler =(e)=>{
     let passErr = [];
     const redPass = document.getElementById("error_password");
 
-
-// email
+    //Ex
     if (!isSubmitDog(email)){
         emailErr.push(" You forgot '@' or '.' ")
     }
@@ -32,15 +28,6 @@ let submitHandler =(e)=>{
         emailErr.push(" Please enter a-z A-Z, ")
     }
 
-    if (emailErr.length > 0) {
-        redEmail.innerHTML = emailErr;
-        redEmail. style.color = "red"
-    } else{
-        redEmail.innerHTML = "all right"
-        redEmail. style.color = "green"
-    }
-
-    // password
     if (! isLowerWord(password)){
         passErr.push(" Please enter a-z")
     }
@@ -51,19 +38,26 @@ let submitHandler =(e)=>{
         passErr.push(" Please enter 0-9");
     }
 
-    if (passErr.length > 0) {
-        redPass.innerHTML = passErr;
-        redPass. style.color = "red"
-    } else{
-        redPass.innerHTML = "all right";
-        redPass. style.color = "green"
+    // email
+    switch (emailErr.length > 0) {
+        case true : redEmail.innerHTML = emailErr; redEmail. style.color = "red"; break;
+        case false : redEmail.innerHTML = "all right", redEmail. style.color = "green"
     }
 
-    if (passErr.length == 0 && emailErr.length == 0){
-        loginFalse(buttonShowConten, buttonSubmit);
-        buttonSubmit.addEventListener("click",  wrong(buttonSubmit), false);
-    }else {
-        loginTrue(buttonShowConten, buttonSubmit);
+    // password
+    switch (passErr.length > 0) {
+        case true : redPass.innerHTML = passErr; redPass. style.color = "red"; break;
+        case false : redPass.innerHTML = "all right"; redPass. style.color = "green"
+    }
+
+    // check true login & password
+    switch (passErr.length == 0 && emailErr.length == 0) {
+        case true : loginFalse(buttonShowConten, buttonSubmit);
+            buttonSubmit.addEventListener("click",  wrong(buttonSubmit), false);
+            buttonShowConten.innerHTML = "Push button to see all range";
+            break;
+        case false : loginTrue(buttonShowConten, buttonSubmit);
+            buttonShowConten.innerHTML = "You will see main content after registration";
     }
 
     if (passErr.length != 0 && emailErr.length != 0){
@@ -74,14 +68,11 @@ let submitHandler =(e)=>{
 
 
 document.addEventListener("submit", submitHandler, false);
-// buttonSubmit.addEventListener("submit",  setKeyframes(buttonSubmit), false);
 
 //media
-
 function wrong(buttonSubmit) {
     buttonSubmit.style.animationName = "wrong";
     console.log("wrong")
-
 }
 
 
@@ -91,7 +82,7 @@ function wrong_submit(buttonSubmit) {
 
         setTimeout(function () {
             buttonSubmit.style.animationName = "wrong";
-        }, 1000);
+        }, 500);
         console.log(",")
     })
 }
