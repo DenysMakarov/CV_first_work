@@ -23,6 +23,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
   
   @media screen and (max-width: 1024px){
     width: 1024px;
@@ -57,8 +58,16 @@
 
 
 .jsItem_box{
-  //background: green;
   z-index: 1;
+
+
+  .jsItem_box_wrap{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    border: 1px solid black;
+  }
 }
 
 
@@ -85,6 +94,11 @@
       //border: 1px solid black;
       height: 30%;
       padding-top: 50px;
+      animation-duration: 1s;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+
+
 
 
 
@@ -162,6 +176,9 @@
       @media screen and (max-width: 375px){
         width: 180px;
       }
+      @media screen and (max-width: 321px){
+        width: 150px!important;
+      }
     }
   }
 }
@@ -183,6 +200,9 @@
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 21px;
   color: #623232;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
   z-index: 100;
 
   background: #F4E4CB;
@@ -226,6 +246,9 @@
   @media screen and (max-width: 375px){
     width: 180px;
   }
+  @media screen and (max-width: 321px){
+    width: 150px!important;
+  }
 
   @keyframes submit_wrong {
     0%{
@@ -248,16 +271,6 @@
     }
 
   }
-
-  //@keyframes submit_w {
-  //  0%{
-  //    background: red;
-  //  }
-  //  100%{
-  //    background: green;
-  //  }
-  //}
-
 }
 
 
@@ -280,7 +293,9 @@
   transition: 1s;
   z-index: 10;
   color: #623232;
-
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
 
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -310,8 +325,8 @@
     width: 130px;
     font-size: 17px;
   }
-  @media screen and (max-width: 320px){
-    width: 100px;
+  @media screen and (max-width: 321px){
+    width: 110px!important;
     font-size: 15px;
   }
 }
@@ -386,3 +401,41 @@
 .jsItem_box{
   //z-index: 1000000000000;
 }
+
+
+///////////////////////////
+
+
+
+@keyframes show_content_disapear {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    right: -50% ;
+  }
+}
+
+
+@keyframes submit_disapear {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    right: 95% ;
+  }
+}
+
+@keyframes ep_disapear {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    margin-left: -400px;
+  }
+}
+
+//////////////////////////

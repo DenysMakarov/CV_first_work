@@ -12,14 +12,11 @@
     <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css"/>
-
-    <link rel="stylesheet" type="text/css" href="es5-sham.min.js"/>
-    <link rel="stylesheet" type="text/css" href="es5-shim.min.js"/>
-
+    <!--<link rel="stylesheet" type="text/css" href="es5-sham.min.js"/>-->
+    <!--<link rel="stylesheet" type="text/css" href="es5-shim.min.js"/>-->
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-
-    <link rel="stylesheet" href="fontawesome-free-5.0.6/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
@@ -432,7 +429,7 @@
 
 <!--Js content-->
 
-<div class="js_content_box_wrap">
+<div class="js_content_box_wrap" id="js_content_box_wrap">
     <div class="js_content_box">
 
         <div class="login_box" id="login_box">
@@ -467,13 +464,13 @@
             <div class="login_content">
                 <form action="" class="login_form">
 
-                    <div class="email_box">
+                    <div class="email_box" id="email_box">
                         <label for="email" class="label_title">email</label>
                         <input type="text" name="email" id="check_email" class="check_email" placeholder="Enter email please">
                         <div class="error_email" id="error_email"></div>
                     </div>
 
-                    <div class="password_box">
+                    <div class="password_box" id="password_box">
                         <label for="password" class="label_title">password</label>
                         <input type="password" name="password" id="check_password" class="check_password" placeholder="Enter password please">
                         <div class="error_password" id="error_password"></div>
@@ -486,7 +483,12 @@
         </div>
         <button class="show_content button_submit_touch" id="show_content">You will see main content after registration</button>
 
-        <div class="jsItem_box"></div>
+        <div class="jsItem_box" id="jsItem_box">
+            <div class="jsItem_box_wrap">
+                <div class="opnion_content"></div>
+
+            </div>
+        </div>
 
     </div>
 </div>
@@ -1062,14 +1064,9 @@
 <!-- FOOTER -->
 
 
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<!--<script type="text/javascript" src="js/slick/slick.min.js"></script>-->
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<!--<script src=""></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/slick-1.8.1/slick/slick.min.js"></script>
+<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
 <script src="app.js"></script>
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
 </body>
 </html>
