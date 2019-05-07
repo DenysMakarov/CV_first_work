@@ -48,6 +48,9 @@
   }
 }
 
+.login_box{
+  background: #ffffff;
+}
 .login_box, .jsItem_box{
   width: 100%;
   height: 100%;
@@ -58,16 +61,11 @@
 
 
 .jsItem_box{
-  z-index: 1;
+  z-index: 10000;
 
-
-  .jsItem_box_wrap{
-    width: 100%;
-    height: 80%;
-    position: absolute;
-    bottom: 0;
-    border: 1px solid black;
-  }
+/////    z-index => менять здесь
+  /////
+  /////
 }
 
 
@@ -367,6 +365,9 @@
 .button_submit_untouch{
   cursor: pointer;
   top: 28.5%;
+  color: #623232;
+  background: #F4E4CB;
+
   box-shadow:
           -1px 0px rgb(61,31,19), -1px 1px rgb(84,44,28),
           -2px 1px rgb(60,30,18), -2px 2px rgb(83,43,27),
@@ -416,6 +417,15 @@
     right: -50% ;
   }
 }
+              @keyframes show_content_apear {
+                0%{
+                  opacity: 0;
+                  right: -50% ;
+                }
+                100%{
+                  opacity: 1;
+                }
+              }
 
 
 @keyframes submit_disapear {
@@ -427,6 +437,16 @@
     right: 95% ;
   }
 }
+              @keyframes submit_apear {
+                0%{
+                  opacity: 0;
+                  right: 95% ;
+                }
+                100%{
+                  opacity: 1;
+                }
+              }
+
 
 @keyframes ep_disapear {
   0%{
@@ -437,5 +457,15 @@
     margin-left: -400px;
   }
 }
+        @keyframes ep_apear {
+          0%{
+            opacity: 0;
+            margin-left: -400px;
+          }
+          100%{
+            opacity: 1;
+            margin-left: 0px;
+          }
+        }
 
 //////////////////////////

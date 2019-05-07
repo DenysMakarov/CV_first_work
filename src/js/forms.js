@@ -1,15 +1,13 @@
-
-
+import {isLogin} from "./modules/test_login";
+const loginTest = new isLogin();
 
 
 let buttonShowConten = document.getElementById("show_content");
 let buttonSubmit = document.getElementById("button_submit");
 let jsItem_box = document.getElementById("jsItem_box");
+let logoutButton = document.getElementById("logout")
 let buttonShowContenTrue = 0;
-//
-//
-//
-// buttonSubmit.addEventListener("click", sw, wrong_submit);
+
 
 let submitHandler =(e)=>{
     e.preventDefault();
@@ -23,27 +21,27 @@ let submitHandler =(e)=>{
     const redPass = document.getElementById("error_password");
 
     //Ex
-    if (!isSubmitDog(email)){
+    if (!loginTest.isSubmitDog(email)){
         emailErr.push(" You forgot '@' or '.' ")
     }
-    if (!isWord(email)){
+    if (!loginTest.isWord(email)){
         emailErr.push(" Please enter a-z A-Z, ")
     }
 
-    if (! isLowerWord(password)){
+    if (! loginTest.isLowerWord(password)){
         passErr.push(" Please enter a-z")
     }
-    if (! isUpperWord(password)){
+    if (! loginTest.isUpperWord(password)){
         passErr.push(" Please enter A-Z")
     }
-    if (! isNumber(password)){
+    if (! loginTest.isNumber(password)){
         passErr.push(" Please enter 0-9");
     }
 
     // email
     switch (emailErr.length > 0) {
         case true : redEmail.innerHTML = emailErr; redEmail. style.color = "red"; break;
-        case false : redEmail.innerHTML = "all right", redEmail. style.color = "green"
+        case false : redEmail.innerHTML = "all right"; redEmail. style.color = "green"
     }
 
     // password
@@ -54,28 +52,20 @@ let submitHandler =(e)=>{
 
     // check true login & password
     switch (passErr.length == 0 && emailErr.length == 0) {
-        case true : loginFalse(buttonShowConten, buttonSubmit); break;
-        case false : loginTrue(buttonShowConten, buttonSubmit);
+        case true : loginTest.loginFalse(buttonShowConten, buttonSubmit, buttonShowContenTrue); buttonShowContenTrue = 1; break;
+        case false : loginTest.loginTrue(buttonShowConten, buttonSubmit, buttonShowContenTrue); buttonShowContenTrue = 0
     }
 
     if (passErr.length != 0 && emailErr.length != 0){
         buttonSubmit.addEventListener("submit",  wrong_submit(buttonSubmit), false);
     }
-
-    console.log(buttonShowContenTrue);
     addShowContentEvent();
-    // console.log(jsItem_box)
 };
 
-
-document.addEventListener("submit", submitHandler, false);
-
-//media
-function wrong(buttonSubmit) {
+export function wrong(buttonSubmit) {
     buttonSubmit.style.animationName = "wrong";
-    // console.log("wrong")
+    console.log("wrong")
 }
-
 
 function wrong_submit(buttonSubmit) {
     buttonSubmit.addEventListener("click", (e)=>{
@@ -84,106 +74,25 @@ function wrong_submit(buttonSubmit) {
         setTimeout(function () {
             buttonSubmit.style.animationName = "wrong";
         }, 500);
-        // console.log(",")
+        console.log(",")
+    })
+}
+// FUNCTIOUN TEST
+function addShowContentEvent() {
+    switch (buttonShowContenTrue) {
+        case 1 :
+            loginTest.BSCT_1(); break;
+        case 0 :
+            loginTest.BSCT_0()
+    }
+}
+
+function logout(){
+    logoutButton.addEventListener("click", (e)=>{
+        loginTest.loginPageApear()
     })
 }
 
 
-// FUNCTIOUN TEST
-
-
-// test email //
-function isSubmitDog(pass){
-    return /[\.]/.test(pass) && /[\@]/.test(pass);
-}
-function isWord(pass){
-    return /[a-z]/i.test(pass);
-}
-
-// test password //
-function isLowerWord(pass) {
-    return /[a-z]/.test(pass)
-}
-function isUpperWord(pass) {
-    return /[A-Z]/.test(pass)
-}
-function isNumber(pass) {
-    return /[1-9]/.test(pass)
-}
-
-//fun add / remove class
-
-function loginTrue(buttonShowConten, buttonSubmit) {
-    buttonShowConten.classList.remove("button_submit_untouch");
-    buttonSubmit.classList.remove("button_submit_touch");
-
-    buttonShowConten.classList.add("button_submit_touch");
-    buttonSubmit.classList.add("button_submit_untouch");
-
-    buttonShowConten.innerHTML = "You will see main content after registration";
-    buttonShowContenTrue = 0;
-}
-function loginFalse(buttonShowConten, buttonSubmit) {
-    buttonShowConten.classList.remove("button_submit_touch");
-    buttonSubmit.classList.remove("button_submit_untouch");
-
-    buttonShowConten.classList.add("button_submit_untouch");
-    buttonSubmit.classList.add("button_submit_touch");
-
-    buttonSubmit.addEventListener("click",  wrong(buttonSubmit), false);
-    buttonShowConten.innerHTML = "Push button to see all range";
-    buttonShowContenTrue = 1;
-}
-
-
-
-// let x = getComputedStyle(document.getElementById("button_submit"));
-// let y = getComputedStyle(document.getElementById("show_content"));
-// console.log(y.width)
-// console.log(x.width)
-// if (x.width == "100px"){
-//     console.log("100px")
-// }
-
-function addShowContentEvent() {
-    switch (buttonShowContenTrue) {
-        case 1 :
-            BSCT_1(); break;
-        case 0 :
-            BSCT_0()
-    }
-
-    function BSCT_1() {
-        buttonShowConten.addEventListener("click", (e)=>{
-            document.getElementById("email_box").style.animationName = "ep_disapear";
-
-            buttonShowConten.classList.remove("button_submit_untouch");
-            buttonShowConten.classList.add("button_submit_touch");
-
-            setTimeout(function () {
-                document.getElementById("password_box").style.animationName = "ep_disapear";
-            },150);
-            setTimeout(function () {
-                buttonSubmit.style.animationName = "submit_disapear";
-            },250);
-            setTimeout(function () {
-                buttonShowConten.style.animationName = "show_content_disapear";
-            },350);
-            setTimeout(function () {
-                // jsItem_box.style.border = "1px solid black";
-                jsItem_box.style.zIndex = "1111111111";
-                document.getElementById("js_content_box_wrap").style.height = "800px"
-
-            },350);
-
-
-            jsItem_box
-        })
-
-    }
-    function BSCT_0() {
-        setTimeout(function () {
-            // jsItem_box.style.backgroundColor = "blue"
-        },1000)
-    }
-}
+document.addEventListener("submit", submitHandler, false);
+logout()
