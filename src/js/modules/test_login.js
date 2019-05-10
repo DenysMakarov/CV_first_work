@@ -84,7 +84,7 @@ export class isLogin {
             },350);
             setTimeout(function () {
                 this.jsItem_box.style.zIndex = "1111111111";
-                document.getElementById("js_content_box_wrap").style.height = "800px"
+                document.getElementById("js_content_box_wrap").style.height = "1000px"
             },700);
         })
     }
