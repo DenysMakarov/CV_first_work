@@ -4,15 +4,16 @@ let products = Data.loadProducts();
 import {Builder} from "./modules/build";
 let createCards = new Builder();
 
-import {firstI} from "./modules/render_content";
-import {secondI} from "./modules/render_content";
+import {sex, man, woman, children} from "./modules/render_content"; ////
+
 import {createPag} from "./modules/render_content";
 import {renderProducts} from "./modules/render_content";
+import {filterProd} from "./modules/render_content";
 
 
 let boxContent = document.getElementById("range_content_box");
 let paginationBox = document.getElementById("pag_box");
-console.log(boxContent);
+// console.log(boxContent);
 export let per_page = 6;
 export let current = 0;
 
@@ -44,5 +45,34 @@ function cheangePag(prod){
         })
     })
 }
+
+
+
+/////// TEST
+
+let cMan = document.getElementById("buttom_man").addEventListener("click",(e)=>{
+    fill(products, sex, man);
+});
+
+let cWan = document.getElementById("buttom_woman").addEventListener("click",(e)=>{
+    fill(products, sex, woman);
+});
+
+
+
+function fill(products, sex, gander){
+
+    let productFilter = filterProd(products, sex, gander);
+    paginationBox.innerHTML = ""
+    console.log(productFilter)
+    renderProducts(productFilter, current, per_page, boxContent);
+    createPag(productFilter, paginationBox); // from modules
+    cheangePag(productFilter);
+
+}
+
+fill(products, sex, woman);
+
+
 
 

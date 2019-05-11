@@ -23,5 +23,16 @@ export function renderProducts(array_products, current, per_page, boxContent) {
     for (let i = firstI(current, per_page); secondI(i, array_products, current, per_page); i++) {
         boxContent.appendChild(createCards.createCard(array_products[i]))
     }
-    console.log(boxContent)
+    // console.log(boxContent)
 }
+
+//// FILTER
+export let sex = "sex", man = "man", woman = "woman", children ="children"
+export function filterProd(products, sex,  targetName) {
+    let fillProd;
+    fillProd = products.filter(el => el.sex == targetName);
+    return fillProd;
+}
+
+
+
