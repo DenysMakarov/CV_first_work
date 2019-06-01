@@ -5,7 +5,7 @@ const loginTest = new isLogin();
 let buttonShowConten = document.getElementById("show_content");
 let buttonSubmit = document.getElementById("button_submit");
 let jsItem_box = document.getElementById("jsItem_box");
-let logoutButton = document.getElementById("logout")
+let logoutButton = document.getElementById("logout");
 let buttonShowContenTrue = 0;
 
 
@@ -64,7 +64,6 @@ let submitHandler =(e)=>{
 
 export function wrong(buttonSubmit) {
     buttonSubmit.style.animationName = "wrong";
-    console.log("wrong")
 }
 
 function wrong_submit(buttonSubmit) {
@@ -74,25 +73,45 @@ function wrong_submit(buttonSubmit) {
         setTimeout(function () {
             buttonSubmit.style.animationName = "wrong";
         }, 500);
-        console.log(",")
     })
 }
 // FUNCTIOUN TEST
 function addShowContentEvent() {
     switch (buttonShowContenTrue) {
         case 1 :
-            loginTest.BSCT_1(); break;
+            loginTest.BSCT_1(); break; //// => from module
         case 0 :
-            loginTest.BSCT_0()
+            loginTest.BSCT_0()         //// => from module
     }
 }
 
-function logout(){
-    logoutButton.addEventListener("click", (e)=>{
-        loginTest.loginPageApear()
-    })
-}
 
 
 document.addEventListener("submit", submitHandler, false);
-logout()
+logoutButton.addEventListener("click", (e)=>{loginTest.loginPageApear()});
+
+// logout();
+
+// console.log(document.getElementById("login_box"));
+
+
+
+let arrBottomsOption = Array.from(document.getElementsByClassName("buttom_option"));
+for(let i = 0; i <arrBottomsOption.length; i++){
+    arrBottomsOption[i].addEventListener("click", (e)=>{
+        for(let i = 0; i < arrBottomsOption.length ; i++){
+            arrBottomsOption[i].classList.remove("button_option_untouch")
+        }
+        e.target.classList.add("button_option_untouch")
+    });
+}
+//
+// function activePag() {
+//   let activeP = Array.from(document.getElementsByClassName("pag_item"));
+//    // console.log(activeP);
+// }
+//
+// setTimeout(function () {
+//     activePag()
+// }, 10)
+

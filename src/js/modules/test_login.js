@@ -8,16 +8,8 @@ export class isLogin {
         this.buttonShowConten = document.getElementById("show_content");
         this.buttonSubmit = document.getElementById("button_submit");
         this.jsItem_box = document.getElementById("jsItem_box");
-        this.buttonShowContenTrue = buttonShowContenTrue
+        this.buttonShowContenTrue = buttonShowContenTrue;
     }
-
-
-    // logOut() {
-    //     this.logout.addEventListener("click", (e) => {
-    //         console.log("skaldkal;dkl")
-    //     });
-    //
-    // }
 
     // test email //
     isSubmitDog(pass) {
@@ -42,7 +34,6 @@ export class isLogin {
     }
 
     // remove / add class:
-
     loginTrue(buttonShowConten, buttonSubmit) {
         buttonShowConten.classList.remove("button_submit_untouch");
         buttonSubmit.classList.remove("button_submit_touch");
@@ -68,8 +59,8 @@ export class isLogin {
 
      BSCT_1() {
         this.buttonShowConten.addEventListener("click", (e)=>{
-            this.emailBox.style.animationName = "ep_disapear";
 
+            this.emailBox.style.animationName = "ep_disapear";
             this.buttonShowConten.classList.remove("button_submit_untouch");
             this.buttonShowConten.classList.add("button_submit_touch");
 
@@ -84,8 +75,14 @@ export class isLogin {
             },350);
             setTimeout(function () {
                 this.jsItem_box.style.zIndex = "1111111111";
-                document.getElementById("js_content_box_wrap").style.height = "1000px"
+                document.getElementById("js_content_box_wrap").classList.add("js_content_box_change");
+                document.getElementById("jsItem_box_wrap").style.bottom = "115px";
+                document.getElementById("js_range_title").style.opacity = "1";
+                document.getElementById("js_login_title").style.opacity = "0";
+
             },700);
+            ///// ADD KEYFRAMES APPEAR RANGE
+
         })
     }
     BSCT_0() {
@@ -110,7 +107,12 @@ export class isLogin {
         },350);
         setTimeout(function () {
             this.jsItem_box.style.zIndex = "1";
-            document.getElementById("js_content_box_wrap").style.height = "400px"
+            document.getElementById("js_content_box_wrap").classList.remove("js_content_box_change");
+            document.getElementById("js_range_title").style.opacity = "0";
+            document.getElementById("js_login_title").style.opacity = "1";
         },10);
+
+        ///// ADD KEYFRAMES DISAPPEAR RANGE
+
     }
 }
