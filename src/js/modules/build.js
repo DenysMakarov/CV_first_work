@@ -33,7 +33,7 @@ export class Builder {
         let sex = Builder.createNewElement("p", "sex_box_shoe", products.sex, null);
         let title = Builder.createNewElement("h5", "name_box_shoe", products.name);
 
-        let showItem = Builder.createNewElement("div", "show_more", "show more", null, null)
+        let showItem = Builder.createNewElement("div", "show_more", "show more", [{"name" : "data-name", "value" : products.nameData}], null)
 
         let shoeBoxFull = Builder.appChild(shoeBox, [coast,coastDown, sex, title, boxSale, showItem])
         return shoeBoxFull

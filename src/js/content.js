@@ -58,7 +58,8 @@ function renderProd(prod) {
     for (let i = firstI(); secondI(i, prod); i++) {
         boxContent.appendChild(createCards.createCard(prod[i]))
     }
-    countPercent_AddCurrency()
+    countPercent_AddCurrency();
+    setNameForPoupPup()
 }
 
 function renderPag(prod) {
@@ -144,6 +145,8 @@ function searchProd(prod) {
             search(prod);
             console.log("kjjkj")
         }
+        setNameForPoupPup()
+
     });
 
     searchForm.addEventListener("keypress", (e)=>{
@@ -160,7 +163,7 @@ function searchProd(prod) {
 function showEmount() {
     document.getElementById("amountItem").innerHTML = "";
     if (mainProd.length>0) {
-        document.getElementById("amountItem").innerHTML = "Amount " + mainProd.length
+        document.getElementById("amountItem").innerHTML = "AMOUNT ON THIS PAGE: " + mainProd.length
     }else{
         document.getElementById("amountItem").innerHTML = "unfortunately nothing has found"
     }
@@ -168,12 +171,6 @@ function showEmount() {
 
 /////////////////////////////
 
-let buttom_test = document.getElementById("buttom_test");
-buttom_test,addEventListener("click", (e) => {
-
-    // console.log(mainProd);
-    // console.log(current)
-})
 
 
 // add currency and precent !!!!!!
@@ -195,8 +192,39 @@ function countPercent_AddCurrency() {
     }
 }
 
-let x = Array.from(document.getElementsByClassName("show_more"));
-for(let i = 0; i < x.length; i++){
-    x[i].setAttribute("data-name", i)
+
+
+
+////////////////////////
+////////////////////////
+//      //      //      // => about how CAN USE Event through ","
+
+// let buttom_test = document.getElementById("buttom_test");
+// buttom_test,addEventListener("click", (e) => {
+//     let y = Array.from(document.getElementsByClassName("show_more"));
+//     console.log(y[2].dataset.name)
+// })
+
+
+function setNameForPoupPup() {
+    let t = Array.from(document.getElementsByClassName("show_more"));
+    t = t.map((el)=>{
+        el.addEventListener("click",(e)=>{
+            console.log(el.dataset.name);
+            console.log(e.target.dataset.name + "target");
+            for(let i = 0; i < products.length; i++){
+                if (products[i].nameData == el.dataset.name){
+                    console.log(products[i].name)
+                }
+            }
+
+        })
+    })
 }
 
+
+let x = {
+    "name":"Denis",
+    "age":[33,28]
+}
+console.log(x)
