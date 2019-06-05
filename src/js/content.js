@@ -3,6 +3,8 @@ let products = Data.loadProducts();
 
 import {Builder} from "./modules/build";
 let createCards = new Builder();
+let createPouPup = new Builder();
+let creatCart = new Builder();
 
 let per_page = 6;
 let current = 0;
@@ -58,7 +60,7 @@ function renderProd(prod) {
     for (let i = firstI(); secondI(i, prod); i++) {
         boxContent.appendChild(createCards.createCard(prod[i]))
     }
-    countPercent_AddCurrency();
+    countPercent_AddCurrency("boxSale","down_coast_shoe");
     setNameForPoupPup()
 }
 
@@ -137,7 +139,6 @@ function search(prod) {
 
 function searchProd(prod) {
     let searchProd;
-
     btn_search.addEventListener("click", (e) => {
         if (searchForm.value == "") {
             // boxContent.innerHTML ="hDJLHSDJKhLHJKD"
@@ -173,9 +174,9 @@ function showEmount() {
 
 
 
-// add currency and precent !!!!!!
-function countPercent_AddCurrency() {
-    let saleForBlock = Array.from(document.getElementsByClassName("boxSale"));
+// add currency and percent !!!!!!
+function countPercent_AddCurrency(boxSale, down_coast_shoe) {
+    let saleForBlock = Array.from(document.getElementsByClassName(boxSale));
     for(let i = 0; i < saleForBlock.length; i++){
         if (saleForBlock[i].innerHTML == -Infinity){
             saleForBlock[i].style.display = "none"
@@ -184,7 +185,7 @@ function countPercent_AddCurrency() {
             saleForBlock[i].innerHTML= "-" + saleForBlock[i].innerHTML +"%"
         }
     }
-    let firstPriceAdd = Array.from(document.getElementsByClassName("down_coast_shoe"));
+    let firstPriceAdd = Array.from(document.getElementsByClassName(down_coast_shoe));
     for(let i = 0; i < firstPriceAdd.length; i++){
         if (firstPriceAdd[i].innerHTML != " "){
             firstPriceAdd[i].innerHTML = "$" + firstPriceAdd[i].innerHTML
@@ -205,26 +206,54 @@ function countPercent_AddCurrency() {
 //     console.log(y[2].dataset.name)
 // })
 
+let cartCount =[]
 
 function setNameForPoupPup() {
-    let t = Array.from(document.getElementsByClassName("show_more"));
-    t = t.map((el)=>{
+    let buttonsShowMore = Array.from(document.getElementsByClassName("show_more"));
+    buttonsShowMore = buttonsShowMore.map((el)=>{
         el.addEventListener("click",(e)=>{
-            console.log(el.dataset.name);
-            console.log(e.target.dataset.name + "target");
             for(let i = 0; i < products.length; i++){
                 if (products[i].nameData == el.dataset.name){
-                    console.log(products[i].name)
+                    createPouPup.createPouPup(products[i]);
+                    // build Poupup =>
+                    countPercent_AddCurrency(" sale_price_shoe_pou_pup", "first_price_shoe_pou_pup")
+                    document.getElementById("PouPap").style.display = "block";
+                    (function () {
+                        document.getElementById("exit_button").addEventListener("click", (e)=>{
+                            document.getElementById("PouPap").style.display = "none";
+                        })
+                        creatCart.createBoxWish(cartCount)
+                    })();
+                    // build Card =>
+                    let buttonsBuy = document.getElementById("buton_buy");
+                    buttonsBuy.addEventListener("click", (e)=>{
+                        document.getElementById("cart_wrap_box").innerHTML=" ";
+                        for(let i = 0; i < products.length; i++){
+                            if (products[i].nameData == buttonsBuy.dataset.name){
+                                cartCount.push(products[i]);
+                                creatCart.createBoxWish(cartCount);
+                                let navItemCart = document.getElementById("cart_summarise_prise").innerHTML = "$" +sumCartPrice(cartCount) // => top cart;
+                                let navItemCart425px = document.getElementById("cart_summarise_prise425").innerHTML = "$" +sumCartPrice(cartCount) // => top cart;
+                            }
+                        }
+                    });
                 }
             }
-
         })
     })
 }
 
-
-let x = {
-    "name":"Denis",
-    "age":[33,28]
+// function => count common sum in cart   => ??? did not succeeded only use reduce ???
+function sumCartPrice(cartCount){
+    let x = [];
+    let y = cartCount.map((el)=>{
+        x.push(el.price)
+    });
+    x = x.reduce(function (a,b) {
+        return a+b
+    });
+    return x
 }
-console.log(x)
+
+
+

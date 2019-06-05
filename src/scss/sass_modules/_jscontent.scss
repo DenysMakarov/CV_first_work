@@ -1,6 +1,6 @@
 .js_content_box_wrap {
   width: 100%;
-  height: 1200px; //// => исправить на 500
+  height: 500px; //// => исправить на 500
   //border: 1px solid black;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,9 +11,9 @@
 
 
 
-  @media screen and(max-width: 769px){  ////////  убрать
-    height: 1000px;
-  }
+  //@media screen and(max-width: 769px){  ////////  убрать
+  //  height: 1000px;
+  //}
 
   @media screen and (max-width: 425px) {
     height: 385px;

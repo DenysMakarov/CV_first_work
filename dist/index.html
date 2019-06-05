@@ -21,26 +21,22 @@
 <body>
 
 <!--PouPap-->
-<div class="PouPap">
-    <div class="content_PouPap">
-        <div class="content_PouPap_box_left">
-            <p class="title_poupap desPouPup"><span>Title:</span> Lorem ipsum dolor.</p>
-            <p class="sex_poupap desPouPup"><span>Sex: </span>men</p>
-            <p class="size_poupap desPouPup"><span>Size: </span>42</p>
-            <p class="description_poupap desPouPup"><span>Description: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.</p>
-            <button class="buton_buy">BUY NOW</button>
-        </div>
-        <div class="content_PouPap_box_right">
-            <div class="exit_button">
-                <div class="lineOne"></div>
-                <div class="lineSecond"></div>
-            </div>
-            <div class="slide_shoe_PouPap"></div>
-        </div>
+<div class="PouPap" id="PouPap"></div>
+<!--PouPap-->
 
+<div class="box_of_cart_wrap" id="box_of_cart_wrap">
+    <div class="box_of_cart" id="box_of_cart">
+        <div class="item_block_top">
+            <div class="item_of_card"></div>
+        </div>
+        <div class="item_block_bottom">
+
+        </div>
     </div>
 </div>
-<!--PouPap-->
+
+
+
 
 
 <!-- NAN -->
@@ -54,7 +50,7 @@
                 <li class="nav_item">About Us</li>
             </ul>
             <ul class="header_nav_bar_right">
-                <li class="nav_item"><i class="basket fas fa-shopping-basket"></i> $250</li>
+                <li class="nav_item" id="nav_item_cart"><i class="basket fas fa-shopping-basket" id="basket"></i><span id="cart_summarise_prise">$0</span> </li>
                 <li class="nav_item">Login</li>
                 <li class="nav_item">Register</li>
             </ul>
@@ -95,7 +91,7 @@
 <div class="under_nav_425">
     <p class="menu_425_item item_425_5">Login</p>
     <p class="menu_425_item item_425_6">Register</p>
-    <p class="menu_425_item item_425_7"><i class="basket fas fa-shopping-basket"></i> $250</p>
+    <p class="menu_425_item item_425_7"><i class="basket fas fa-shopping-basket" id="basket425"></i><span id="cart_summarise_prise425">$0</span> </p>
     <p class="menu_425_item item_425_8"></p>
     <div class="add_menu">
         <div class="drop_menu">
@@ -568,8 +564,7 @@
                 </div>
 
                 <div class="range_content" id="range_content">
-                    <p class="amountItem" id="amountItem">aksjf;klsfj</p>
-
+                    <p class="amountItem" id="amountItem"></p>
                     <div class="range_content_box" id="range_content_box"></div>
                     <div class="pag_box" id="pag_box"></div>
                 </div>
