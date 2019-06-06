@@ -16,7 +16,8 @@
     <!--<link rel="stylesheet" type="text/css" href="es5-shim.min.js"/>-->
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 
@@ -25,18 +26,46 @@
 <!--PouPap-->
 
 <div class="box_of_cart_wrap" id="box_of_cart_wrap">
-    <div class="box_of_cart" id="box_of_cart">
-        <div class="item_block_top">
-            <div class="item_of_card"></div>
-        </div>
-        <div class="item_block_bottom">
+    <!--<div class="exit_top_block_cart">-->
+        <!--<div class="line_first"></div>-->
+        <!--<div class="line_second"></div>-->
+    <!--</div>-->
+    <!--<div class="box_of_cart" id="box_of_cart">-->
+        <!--<div class="item_block_top">-->
+            <!--<div class="item_of_card">-->
+                <!--<div class="item_of_card_block_left">-->
+                    <!--<div class="item_of_card_desc item_of_card_title"><span>Title: </span><span-->
+                            <!--class="item_of_card_second_text">Nike</span></div>-->
+                    <!--<div class="item_of_card_desc item_of_card_price"><span>price: </span><span-->
+                            <!--class="item_of_card_second_text">Nike</span></div>-->
+                    <!--<div class="item_of_card_desc item_of_card_size">-->
+                        <!--<span>size: </span>-->
+                        <!--<select class="select_size" name="size" id="size">-->
+                            <!--<option value="">32</option>-->
+                            <!--<option value="">42</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="remove_item_card">refuse</div>-->
+                <!--</div>-->
 
-        </div>
-    </div>
+                <!--<div class="item_of_card_block_centre"></div>-->
+
+                <!--<div class="item_of_card_block_right">-->
+                    <!--<div class="item_of_card_desc item_of_card_title"><span>Description: </span><span-->
+                            <!--class="item_of_card_second_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate debitis eos excepturi impedit iusto laborum molestias neque non, nulla, rerum sequi vel vitae? Accusantium animi consequatur delectus distinctio eligendi et eveniet explicabo inventore maiores, minus natus necessitatibus obcaecati officiis praesentium quam suscipit tempora voluptatibus!</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="item_block_bottom">-->
+            <!--<p><span class="item_block_bottom_desc_first">GOODS: </span><span class="item_block_bottom_desc_second">2 items</span>-->
+            <!--</p>-->
+            <!--<p><span class="item_block_bottom_desc_first">SUM: </span><span-->
+                    <!--class="item_block_bottom_desc_second">$ 445</span></p>-->
+            <!--<div class="buttom_cart_buy">BUY</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
-
-
-
 
 
 <!-- NAN -->
@@ -50,7 +79,8 @@
                 <li class="nav_item">About Us</li>
             </ul>
             <ul class="header_nav_bar_right">
-                <li class="nav_item" id="nav_item_cart"><i class="basket fas fa-shopping-basket" id="basket"></i><span id="cart_summarise_prise">$0</span> </li>
+                <li class="nav_item" id="nav_item_cart"><i class="basket fas fa-shopping-basket" id="basket"></i><span
+                        id="cart_summarise_prise">$0</span></li>
                 <li class="nav_item">Login</li>
                 <li class="nav_item">Register</li>
             </ul>
@@ -91,7 +121,8 @@
 <div class="under_nav_425">
     <p class="menu_425_item item_425_5">Login</p>
     <p class="menu_425_item item_425_6">Register</p>
-    <p class="menu_425_item item_425_7"><i class="basket fas fa-shopping-basket" id="basket425"></i><span id="cart_summarise_prise425">$0</span> </p>
+    <p class="menu_425_item item_425_7"><i class="basket fas fa-shopping-basket" id="basket425"></i><span
+            id="cart_summarise_prise425">$0</span></p>
     <p class="menu_425_item item_425_8"></p>
     <div class="add_menu">
         <div class="drop_menu">
@@ -513,18 +544,22 @@
 
                     <div class="email_box" id="email_box">
                         <label for="email" class="label_title">email</label>
-                        <input type="text" name="email" id="check_email" class="check_email" placeholder="Enter email please">
+                        <input type="text" name="email" id="check_email" class="check_email"
+                               placeholder="Enter email please">
                         <div class="error_email" id="error_email"></div>
                     </div>
 
                     <div class="password_box" id="password_box">
                         <label for="password" class="label_title">password</label>
-                        <input type="password" name="password" id="check_password" class="check_password" placeholder="Enter password please">
+                        <input type="password" name="password" id="check_password" class="check_password"
+                               placeholder="Enter password please">
                         <div class="error_password" id="error_password"></div>
                     </div>
 
                     <button type="click" id="button_submit" class="button_submit button_submit_untouch">SUBMIT</button>
-                    <button class="show_content button_submit_touch" id="show_content">You will see main content after registration</button>
+                    <button class="show_content button_submit_touch" id="show_content">You will see main content after
+                        registration
+                    </button>
 
                 </form>
             </div>
@@ -1146,10 +1181,11 @@
 <!-- FOOTER -->
 
 
-
 <!--<script src="app.js"></script>-->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/slick-1.8.1/slick/slick.min.js"></script>
 
 <!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->

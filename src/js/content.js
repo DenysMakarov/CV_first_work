@@ -5,6 +5,7 @@ import {Builder} from "./modules/build";
 let createCards = new Builder();
 let createPouPup = new Builder();
 let creatCart = new Builder();
+let createTableOfOrders = new Builder();
 
 let per_page = 6;
 let current = 0;
@@ -221,7 +222,7 @@ function setNameForPoupPup() {
                     (function () {
                         document.getElementById("exit_button").addEventListener("click", (e)=>{
                             document.getElementById("PouPap").style.display = "none";
-                        })
+                        });
                         creatCart.createBoxWish(cartCount)
                     })();
                     // build Card =>
@@ -257,3 +258,40 @@ function sumCartPrice(cartCount){
 
 
 
+
+let testArr =[
+    {"name":"Puma Duplex W", "price": 234.50, "priceDown": 255.00, "boxSale": 25, "sex": "woman", "imgEl": "shoe_item_6.png", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.", "size": [39, 41]},
+    {"name":"Puma Duplex Split", "price": 57.50, "priceDown": 145.00, "boxSale": 25, "sex": "woman", "imgEl": "shoe_item_7.png", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.", "size": [38, 41, 42]},
+    {"name":"Nike Nexus", "price": 67.50, "priceDown": 87.50, "boxSale": 25, "sex": "woman", "imgEl": "shoe_item_8.png", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.", "size": [43, 45]}
+]
+
+// function createListOfOrder(testArr){
+//     for(let i = 0; i < testArr.length; i++){
+//         console.log("jhkjh");
+//         f(testArr, i);
+//     }
+// }
+// createListOfOrder(testArr)
+
+
+    createTableOfOrders.createTableOfOrders(testArr, 0);
+
+
+
+
+
+
+
+
+
+
+// function f(testArr, numOfArr) {
+//     for(let i = 0; i < testArr[numOfArr].size.length; i++){
+//         let x= Builder.createNewElement("div", null, testArr[numOfArr].size[i]);
+//         console.log(x)
+//     }
+// }
+
+
+
+console.log(testArr[1].size)

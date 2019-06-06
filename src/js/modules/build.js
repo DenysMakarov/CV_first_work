@@ -5,8 +5,6 @@ export class Builder {
     static createNewElement(tag, classEl=null, innerEl=null, attrEl=null, imgEl=null, currency = null){
         let el = document.createElement(tag);
         el.className = (classEl) ? classEl : "";
-
-
         el.innerHTML = (innerEl) ? innerEl : "";
         el.style.backgroundImage = imgEl;
 
@@ -68,6 +66,25 @@ export class Builder {
         let cartWrapBox = document.getElementById("cart_wrap_box");
         let cartBox = Builder.appChild(Builder.createNewElement("div", "cartBox", null, [{"name":"id", "value":"cartBox"}]), [Builder.createNewElement("i", "fas fa-cart-arrow-down"), Builder.createNewElement("p", "cordCount", cartCount.length)]);
         return cartWrapBox.appendChild(cartBox)
+    }
+
+    createTableOfOrders(prod, numOfArr){
+        let ListOfOrdersWrap = document.getElementById("box_of_cart_wrap");
+
+
+
+        // f(prod, numOfArr);
+        // let SelectSize = Builder.appChild(Builder.createNewElement("div", "select_size"), [ListOfOrdersWrap])
+
+
+
+            let SelectSize = Builder.createNewElement("select", "select_size");
+            for(let i = 0; i < prod[numOfArr].size.length; i++){
+                let x= Builder.createNewElement("option", "option", prod[numOfArr].size[i]);
+                SelectSize.appendChild(x)
+            }
+            console.log(SelectSize)
+
     }
 
 
