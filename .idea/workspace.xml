@@ -4,8 +4,6 @@
     <list default="true" id="95700656-8fb9-4e29-8a2e-c63f1dd94859" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/modules/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/build.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="37" column="22" selection-start-line="37" selection-end-line="38" />
+            <state relative-caret-position="337">
+              <caret line="64" column="59" lean-forward="true" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -46,20 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+            <state relative-caret-position="269">
+              <caret line="112" column="217" selection-start-line="112" selection-start-column="217" selection-end-line="112" selection-end-column="217" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
+            <state relative-caret-position="140">
+              <caret line="247" column="28" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -101,8 +99,8 @@
         <option value="$PROJECT_DIR$/src/scss/main.scss" />
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/js/modules/build.js" />
         <option value="$PROJECT_DIR$/src/js/content.js" />
+        <option value="$PROJECT_DIR$/src/js/modules/build.js" />
       </list>
     </option>
   </component>
@@ -223,12 +221,12 @@
       <workItem from="1557150323958" duration="74342000" />
       <workItem from="1557777354512" duration="1775000" />
       <workItem from="1557779170492" duration="1736000" />
-      <workItem from="1557822675436" duration="126993000" />
+      <workItem from="1557822675436" duration="131170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275590000" />
+    <option name="totallyTimeSpent" value="279767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="822" height="816" extended-state="0" />
@@ -409,10 +407,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/src/js/modules/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="37" column="22" selection-start-line="37" selection-end-line="38" />
+        <state relative-caret-position="26">
+          <caret line="21" selection-start-line="21" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -423,10 +421,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/data.js">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="21" selection-start-line="21" selection-end-line="24" />
+        <state relative-caret-position="337">
+          <caret line="64" column="59" lean-forward="true" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -437,17 +435,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
+    <entry file="file://$PROJECT_DIR$/src/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="85" column="34" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+        <state relative-caret-position="140">
+          <caret line="247" column="28" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/content.js">
+    <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
+        <state relative-caret-position="269">
+          <caret line="112" column="217" selection-start-line="112" selection-start-column="217" selection-end-line="112" selection-end-column="217" />
         </state>
       </provider>
     </entry>
