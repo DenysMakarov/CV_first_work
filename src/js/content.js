@@ -318,8 +318,12 @@ openCartList("basket425");
 
 function cartEmpty(){
     if (cartCount.length == 0) {
-        document.getElementById("cordCount").innerHTML = "Empty";
+        document.getElementById("cordCount").innerHTML = "Empthy";
+        document.getElementById("fixed_cart").style.width = "150px";
+
         document.getElementById("cart_summarise_prise").innerHTML = "$0"
+    }else if(cartCount.length != 0){
+        document.getElementById("fixed_cart").style.width = "60px";
     }
 
 }
