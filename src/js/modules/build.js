@@ -65,10 +65,12 @@ export class Builder {
         let rightBox = Builder.appChild(Builder.createNewElement("div", "content_PouPap_box_right", null, [{
             "name": "id",
             "value": "content_PouPap_box_right"
-        }]), [exitButton, Builder.createNewElement("div", "main_price_shoe_pou_pup", "$" + product.price), Builder.createNewElement("div", "first_price_shoe_pou_pup", product.priceDown), Builder.createNewElement("div", "sale_price_shoe_pou_pup", countPercent(product.priceDown, product.price)), Builder.createNewElement("div", "cart_wrap_box", null, [{
+        }]), [exitButton, Builder.createNewElement("div", "main_price_shoe_pou_pup", "$" + product.price), Builder.createNewElement("div", "first_price_shoe_pou_pup", product.priceDown), Builder.createNewElement("div", "sale_price_shoe_pou_pup", countPercent(product.priceDown, product.price)),
+            Builder.createNewElement("div", "cart_wrap_box", null, [{
             "name": "id",
             "value": "cart_wrap_box"
-        }])]);
+        }])
+            ]);
         rightBox.style.backgroundImage = "url(images/" + product.imgEl + ")"
 
         let pouPupContent = Builder.appChild(Builder.createNewElement("div", "content_PouPap"), [leftBox, rightBox]);
@@ -79,8 +81,8 @@ export class Builder {
     }
 
     createBoxWish(cartCount) {
-
         let cartWrapBox = document.getElementById("cart_wrap_box");
+        document.getElementById("cart_wrap_box").innerHTML=" ";
         let cartBox = Builder.appChild(Builder.createNewElement("div", "cartBox", null, [{
             "name": "id",
             "value": "cartBox"
@@ -88,45 +90,67 @@ export class Builder {
         return cartWrapBox.appendChild(cartBox)
     }
 
+
+    createCartFixed(cartCount) {
+        let cartWrapBox = document.getElementById("fixed_cart");
+        document.getElementById("fixed_cart").innerHTML=" ";
+
+        let cartBox = Builder.appChild(Builder.createNewElement("div", "cartBox", null, [{
+            "name": "id",
+            "value": "cartBox"
+        }]), [Builder.createNewElement("i", "fas fa-cart-arrow-down"), Builder.createNewElement("p", "cordCount", cartCount.length)]);
+        return cartWrapBox.appendChild(cartBox)
+
+    }
+
     ///////////////////////
 
-    createTableOfOrders(prod, numOfArr) {
-        let ListOfOrdersWrap = document.getElementById("box_of_cart_wrap");
-
+    createTableOfOrders(prod, cartCount) {
+        let ListOfOrdersWrap = document.getElementById("cart_list");
+        ListOfOrdersWrap.innerHTML = "";
+        ///////// => block top
+        let cartItemBlockTop = Builder.createNewElement("div", "item_block_top", null, [{
+            "name": "id",
+            "value": "item_block_top"
+        }]);
         for(let i = 0; i < prod.length; i++){
+            let SelectSize = Builder.createNewElement("select", "select_size");
 
+            for (let j = 0; j < prod[i].size.length; j++) {
+                let x = Builder.createNewElement("option", "option", prod[i].size[j]);
+                SelectSize.appendChild(x)
+            }
+            // console.log(SelectSize);
 
+            let itemSizeBox = Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_size"),[Builder.createNewElement("span", null, "Chose size: "), SelectSize])
+            let itemOfCardTitle =  Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_title"),[Builder.createNewElement("span", null, "Title: "), Builder.createNewElement("span", "item_of_card_second_text", prod[i].name)]);
+            let itemOfCardPrice =  Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_price"),[Builder.createNewElement("span", null, "Price: "), Builder.createNewElement("span", "item_of_card_second_text", prod[i].price)])
+            let buttonRemoveItem = Builder.createNewElement("div", "remove_item_card", "REMOVE");
+
+            let CardBlockLeft = Builder.appChild(Builder.createNewElement("div", "item_of_card_block_left"), [itemOfCardTitle, itemOfCardPrice, itemSizeBox, buttonRemoveItem]);
+            let CardBlockRight = Builder.appChild(Builder.createNewElement("div", "item_of_card_block_right"), [Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_title"), [Builder.createNewElement("span", null, "Description: "), Builder.createNewElement("span", "item_of_card_second_text", prod[i].desc)])])
+            let CardBlockCener = Builder.createNewElement("div", "item_of_card_block_centre");
+            CardBlockCener.style.backgroundImage = "url(images/" + prod[i].imgEl + ")";
+            let cartItem = Builder.appChild(Builder.createNewElement("div", "item_of_card"), [CardBlockLeft, CardBlockCener, CardBlockRight]);
+
+            cartItemBlockTop.appendChild(cartItem);
         }
 
+        ///////// => block bottom
+        let commonGoods = Builder.appChild(Builder.createNewElement("p"), [Builder.createNewElement("span", "item_block_bottom_desc_first", "GOODS: "), Builder.createNewElement("span", "item_block_bottom_desc_second", prod.length + " items")])
+        let commonSum = Builder.appChild(Builder.createNewElement("p"), [Builder.createNewElement("span", "item_block_bottom_desc_first", "SUM: "), Builder.createNewElement("span", "item_block_bottom_desc_second", "$" + sumCartPrice(prod))])
+        let BottonBuy = Builder.createNewElement("div", "buttom_cart_buy", "BUY", [{"name":"id", "value":"buttom_cart_buy"}]);
+        let cartItemBlockBottom = Builder.appChild(Builder.createNewElement("div", "item_block_bottom" ), [commonGoods, commonSum, BottonBuy] );
 
-        let SelectSize = Builder.createNewElement("select", "select_size");
-        for (let i = 0; i < prod[numOfArr].size.length; i++) {
-            let x = Builder.createNewElement("option", "option", prod[numOfArr].size[i]);
-            SelectSize.appendChild(x)
-        }
-        let itemSizeBox = Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_size"),[Builder.createNewElement("span"), SelectSize])
-        let itemOfCardTitle =  Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_title"),[Builder.createNewElement("span", null, "Title: "), Builder.createNewElement("span", "item_of_card_second_text", prod[numOfArr].name)]);
-        let itemOfCardPrice =  Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_price"),[Builder.createNewElement("span", null, "Price: "), Builder.createNewElement("span", "item_of_card_second_text", prod[numOfArr].price)])
-        let buttonRemoveItem = Builder.createNewElement("div", "remove_item_card");
-
-        let CardBlockLeft = Builder.appChild(Builder.createNewElement("div", "item_of_card_block_left"), [itemOfCardTitle, itemOfCardPrice, itemSizeBox, buttonRemoveItem]);
-        let CardBlockRight = Builder.appChild(Builder.createNewElement("div", "item_of_card_block_right"), [Builder.appChild(Builder.createNewElement("div", "item_of_card_desc item_of_card_title"), [Builder.createNewElement("span", null, "Description: "), Builder.createNewElement("span", "item_of_card_second_text", prod[numOfArr].desc)])])
-
-        let cartItem = Builder.appChild(Builder.createNewElement("div", "item_of_card"), [CardBlockLeft, Builder.createNewElement("div", "item_of_card_block_centre"), CardBlockRight]);
-        let cartItemBlockTop = Builder.appChild(Builder.createNewElement("div", "cartItem"), [cartItem])
-///
+        ///////// => main box cart
+        let boxOfCart = Builder.appChild(Builder.createNewElement("div", "box_of_cart", null, [{"name":"id", "value":"box_of_cart"}]), [cartItemBlockTop, cartItemBlockBottom]);
+        let exitButtonCart = Builder.appChild(Builder.createNewElement("div", "exit_top_block_cart", null, [{"name":"id", "value":"exit_cart"}]), [Builder.createNewElement("div", "line_first"), Builder.createNewElement("div", "line_second")]);
 
 
-        let commonGoods = Builder.appChild(Builder.createNewElement("p"), [Builder.createNewElement("span", "item_block_bottom_desc_first", "GOODS:"), Builder.createNewElement("span", "item_block_bottom_desc_second", prod.length + "items")])
-        let commonSum = Builder.appChild(Builder.createNewElement("p"), [Builder.createNewElement("span", "item_block_bottom_desc_first", "SUM: "), Builder.createNewElement("span", "item_block_bottom_desc_second", "$ " + sumCartPrice(prod))])
+        let ListOfOrders = Builder.appChild(ListOfOrdersWrap, [exitButtonCart, boxOfCart])
 
-        let cartItemBlockBottom = Builder.appChild(Builder.createNewElement("div", "item_block_bottom" ), [commonGoods, commonSum] )
-
-
-
-
-
-        console.log(cartItemBlockBottom)
+        return ListOfOrders;
+        // console.log(cartCount)
     }
 
 

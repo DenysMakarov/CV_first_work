@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95700656-8fb9-4e29-8a2e-c63f1dd94859" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/content.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/modules/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/modules/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/modules/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="64" column="59" lean-forward="true" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="65" />
+            <state relative-caret-position="621">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -29,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="330" column="68" selection-start-line="330" selection-start-column="68" selection-end-line="330" selection-end-column="68" />
+            <state relative-caret-position="253">
+              <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -38,26 +42,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="-86">
               <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="78" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="112" column="217" selection-start-line="112" selection-start-column="217" selection-end-line="112" selection-end-column="217" />
+            <state relative-caret-position="69">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="5" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-42">
+              <caret line="141" column="121" selection-start-line="141" selection-start-column="121" selection-end-line="141" selection-end-column="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="247" column="28" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="28" />
+            <state relative-caret-position="393">
+              <caret line="303" column="4" selection-start-line="303" selection-start-column="4" selection-end-line="303" selection-end-column="4" />
+              <folding>
+                <element signature="e#5330#5551#0" />
+                <element signature="e#8040#8081#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,15 +109,15 @@
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_3_main_content.scss" />
         <option value="$PROJECT_DIR$/src/js/forms.js" />
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_1_header_nav.scss" />
-        <option value="$PROJECT_DIR$/src/js/modules/data.js" />
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_jscontent.scss" />
-        <option value="$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss" />
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_poupup.scss" />
         <option value="$PROJECT_DIR$/src/scss/main.scss" />
-        <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" />
+        <option value="$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss" />
+        <option value="$PROJECT_DIR$/src/js/modules/data.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/js/content.js" />
+        <option value="$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss" />
         <option value="$PROJECT_DIR$/src/js/modules/build.js" />
+        <option value="$PROJECT_DIR$/src/js/content.js" />
       </list>
     </option>
   </component>
@@ -221,12 +238,12 @@
       <workItem from="1557150323958" duration="74342000" />
       <workItem from="1557777354512" duration="1775000" />
       <workItem from="1557779170492" duration="1736000" />
-      <workItem from="1557822675436" duration="131170000" />
+      <workItem from="1557822675436" duration="181158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279767000" />
+    <option name="totallyTimeSpent" value="329755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="822" height="816" extended-state="0" />
@@ -379,13 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-476">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_jscontent.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -407,45 +417,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/data.js">
+    <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_js_range.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="21" selection-start-line="21" selection-end-line="24" />
+        <state relative-caret-position="387">
+          <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_parth_9_js_cart.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="330" column="68" selection-start-line="330" selection-start-column="68" selection-end-line="330" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="64" column="59" lean-forward="true" selection-start-line="64" selection-start-column="59" selection-end-line="64" selection-end-column="65" />
+        <state relative-caret-position="253">
+          <caret line="67" column="10" selection-start-line="67" selection-start-column="10" selection-end-line="67" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
+        <state relative-caret-position="-86">
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="78" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/content.js">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="247" column="28" selection-start-line="247" selection-start-column="16" selection-end-line="247" selection-end-column="28" />
+        <state relative-caret-position="621">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/modules/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="112" column="217" selection-start-line="112" selection-start-column="217" selection-end-line="112" selection-end-column="217" />
+        <state relative-caret-position="-42">
+          <caret line="141" column="121" selection-start-line="141" selection-start-column="121" selection-end-line="141" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="303" column="4" selection-start-line="303" selection-start-column="4" selection-end-line="303" selection-end-column="4" />
+          <folding>
+            <element signature="e#5330#5551#0" />
+            <element signature="e#8040#8081#0" />
+          </folding>
         </state>
       </provider>
     </entry>

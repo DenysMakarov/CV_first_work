@@ -1,11 +1,13 @@
 import {Data} from "./modules/data";
+
 let products = Data.loadProducts();
 
 import {Builder} from "./modules/build";
+
 let createCards = new Builder();
 let createPouPup = new Builder();
 let creatCart = new Builder();
-let createTableOfOrders = new Builder();
+let createListOfOrders = new Builder();
 
 let per_page = 6;
 let current = 0;
@@ -28,10 +30,6 @@ let btn_search = document.getElementById("btn_search");
 // console.dir(products[1]);
 
 
-
-
-
-
 let copyProd = [];
 let mainProd = copyProd.concat(products);
 
@@ -40,7 +38,7 @@ function shareRender(prod) {
     renderProd(prod);
     renderPag(prod);
     cheangePag(prod);
-    setTimeout(e => showEmount(),10)
+    setTimeout(e => showEmount(), 10)
 }
 
 shareRender(mainProd);
@@ -61,7 +59,7 @@ function renderProd(prod) {
     for (let i = firstI(); secondI(i, prod); i++) {
         boxContent.appendChild(createCards.createCard(prod[i]))
     }
-    countPercent_AddCurrency("boxSale","down_coast_shoe");
+    countPercent_AddCurrency("boxSale", "down_coast_shoe");
     setNameForPoupPup()
 }
 
@@ -73,7 +71,7 @@ function renderPag(prod) {
             "value": i
         }]));
     }
-    if (prod.length>0) {
+    if (prod.length > 0) {
         paginationBox.firstChild.classList.add("active_pag")
     }
 }
@@ -86,7 +84,7 @@ function cheangePag(prod) {
             renderProd(prod);
             console.log("current " + current);
             // searchProd(prod, paginationBox);
-            for(let i = 0; i < countPag.length; i++){
+            for (let i = 0; i < countPag.length; i++) {
                 countPag[i].classList.remove("active_pag");
             }
             e.target.classList.add("active_pag");
@@ -109,14 +107,14 @@ changeMan.addEventListener("click", (e) => {
     return mainProd
 });
 changeWoman.addEventListener("click", (e) => {
-    current =0;
+    current = 0;
     mainProd = optionSex(products, woman);  // from modules
     shareRender(mainProd);
     searchProd(mainProd);
     return mainProd
 });
 changeChildren.addEventListener("click", (e) => {
-    current =0;
+    current = 0;
     mainProd = optionSex(products, children);  // from modules
     shareRender(mainProd);
     searchProd(mainProd);
@@ -131,7 +129,8 @@ changeAll.addEventListener("click", (e) => {
 
 
 function search(prod) {
-    current = 0; paginationBox.innerHTML = "";
+    current = 0;
+    paginationBox.innerHTML = "";
     let searchRegExp = new RegExp(searchForm.value, ["ig"]);
     prod = prod.filter(el => searchRegExp.test(el.name));
     shareRender(prod);
@@ -151,8 +150,8 @@ function searchProd(prod) {
 
     });
 
-    searchForm.addEventListener("keypress", (e)=>{
-        if(e.keyCode == 13){
+    searchForm.addEventListener("keypress", (e) => {
+        if (e.keyCode == 13) {
             search(prod);
             console.log("kjjkj")
         }
@@ -160,13 +159,11 @@ function searchProd(prod) {
 }
 
 
-
-
 function showEmount() {
     document.getElementById("amountItem").innerHTML = "";
-    if (mainProd.length>0) {
+    if (mainProd.length > 0) {
         document.getElementById("amountItem").innerHTML = "AMOUNT ON THIS PAGE: " + mainProd.length
-    }else{
+    } else {
         document.getElementById("amountItem").innerHTML = "unfortunately nothing has found"
     }
 }
@@ -174,27 +171,37 @@ function showEmount() {
 /////////////////////////////
 
 
-
 // add currency and percent !!!!!!
 function countPercent_AddCurrency(boxSale, down_coast_shoe) {
     let saleForBlock = Array.from(document.getElementsByClassName(boxSale));
-    for(let i = 0; i < saleForBlock.length; i++){
-        if (saleForBlock[i].innerHTML == -Infinity){
+    for (let i = 0; i < saleForBlock.length; i++) {
+        if (saleForBlock[i].innerHTML == -Infinity) {
             saleForBlock[i].style.display = "none"
-        }
-        else{
-            saleForBlock[i].innerHTML= "-" + saleForBlock[i].innerHTML +"%"
+        } else {
+            saleForBlock[i].innerHTML = "-" + saleForBlock[i].innerHTML + "%"
         }
     }
     let firstPriceAdd = Array.from(document.getElementsByClassName(down_coast_shoe));
-    for(let i = 0; i < firstPriceAdd.length; i++){
-        if (firstPriceAdd[i].innerHTML != " "){
+    for (let i = 0; i < firstPriceAdd.length; i++) {
+        if (firstPriceAdd[i].innerHTML != " ") {
             firstPriceAdd[i].innerHTML = "$" + firstPriceAdd[i].innerHTML
         }
     }
 }
 
-
+// function => count common sum in cart   => ??? did not succeeded only use reduce ???
+export function sumCartPrice(cartCount) {
+    let x = [];
+    if (cartCount != 0) {
+        let y = cartCount.map((el) => {
+            x.push(el.price)
+        });
+        x = x.reduce(function (a, b) {
+            return a + b
+        });
+    }
+    return x
+}
 
 
 ////////////////////////
@@ -207,72 +214,174 @@ function countPercent_AddCurrency(boxSale, down_coast_shoe) {
 //     console.log(y[2].dataset.name)
 // })
 
-let cartCount =[]
+let cartCount = [];
 
 function setNameForPoupPup() {
     let buttonsShowMore = Array.from(document.getElementsByClassName("show_more"));
-    buttonsShowMore = buttonsShowMore.map((el)=>{
-        el.addEventListener("click",(e)=>{
-            for(let i = 0; i < products.length; i++){
-                if (products[i].nameData == el.dataset.name){
+    buttonsShowMore = buttonsShowMore.map((el) => {
+        el.addEventListener("click", (e) => {
+            for (let i = 0; i < products.length; i++) {
+                if (products[i].nameData == el.dataset.name) {
                     createPouPup.createPouPup(products[i]);
                     // build Poupup =>
                     countPercent_AddCurrency(" sale_price_shoe_pou_pup", "first_price_shoe_pou_pup")
                     document.getElementById("PouPap").style.display = "block";
                     (function () {
-                        document.getElementById("exit_button").addEventListener("click", (e)=>{
+                        document.getElementById("exit_button").addEventListener("click", (e) => {
                             document.getElementById("PouPap").style.display = "none";
                         });
-                        creatCart.createBoxWish(cartCount)
                     })();
-                    // build Card =>
-                    let buttonsBuy = document.getElementById("buton_buy");
-                    buttonsBuy.addEventListener("click", (e)=>{
-                        document.getElementById("cart_wrap_box").innerHTML=" ";
-                        for(let i = 0; i < products.length; i++){
-                            if (products[i].nameData == buttonsBuy.dataset.name){
-                                cartCount.push(products[i]);
-                                creatCart.createBoxWish(cartCount);
-                                let navItemCart = document.getElementById("cart_summarise_prise").innerHTML = "$" +sumCartPrice(cartCount) // => top cart;
-                                let navItemCart425px = document.getElementById("cart_summarise_prise425").innerHTML = "$" +sumCartPrice(cartCount) // => top cart;
-                            }
-                        }
-                    });
+
+                    // build Cart =>
+                    createCartList()
+
                 }
             }
         })
     })
 }
 
-// function => count common sum in cart   => ??? did not succeeded only use reduce ???
-export function sumCartPrice(cartCount){
-    let x = [];
-    let y = cartCount.map((el)=>{
-        x.push(el.price)
+creatCart.createCartFixed(cartCount)
+
+function createCartList() {
+    let buttonsBuy = document.getElementById("buton_buy");
+    buttonsBuy.addEventListener("click", (e) => {
+        for (let i = 0; i < products.length; i++) {
+            if (products[i].nameData == buttonsBuy.dataset.name) {
+
+                cartCount.push(products[i]);
+                creatCart.createBoxWish(cartCount);
+                creatCart.createCartFixed(cartCount)//???
+
+
+                let navItemCart = document.getElementById("cart_summarise_prise").innerHTML = "$" + sumCartPrice(cartCount); // => top cart;
+                let navItemCart425px = document.getElementById("cart_summarise_prise425").innerHTML = "$" + sumCartPrice(cartCount) // => top cart;
+            }
+        }
     });
-    x = x.reduce(function (a,b) {
-        return a+b
-    });
-    return x
 }
 
+function openCartList() {
+
+    let cart = document.getElementById("fixed_cart");
+    let cartList = document.getElementById("cart_list");
+    cartList.innerHTML = ""
+
+    createListOfOrders.createTableOfOrders(cartCount, cartCount);
+
+    let removeArr = Array.from(document.getElementsByClassName("remove_item_card"))
+    removeArr = removeArr.map((el)=>{
+        for (let i = 0; i < cartCount.length; i++) {
+            removeArr[i].setAttribute("data-remove", i);
+        }
+    });
+
+    cart.addEventListener("click", (e)=>{
+        cartList.style.display = "block";
+        openCartList()
+    });
+    let btn = document.getElementById("buttom_cart_buy");
+    btn.addEventListener("click", (e)=>{
+        console.log("lkj")
+        cartCount.pop()
+        cartList.style.display = "block";
+
+        openCartList()
+    })
+
+        let btnRemove = Array.from(document.getElementsByClassName("remove_item_card"));
+        btnRemove.map((el)=>{
+            el.addEventListener("click", (e)=>{
+                let x = +e.target.dataset.remove;
+
+                cartCount.splice(x, x)
+
+                cartList.style.display = "block";
+
+                openCartList()
+            })
+        })
 
 
 
-let testArr =[
-    {"name":"Puma Duplex Split", "price": 57.50, "priceDown": 145.00, "boxSale": 25, "sex": "woman", "imgEl": "shoe_item_7.png", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.", "size": [38, 41, 42]},
-    {"name":"Nike Nexus", "price": 67.50, "priceDown": 87.50, "boxSale": 25, "sex": "woman", "imgEl": "shoe_item_8.png", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquid autem nesciunt officiis quam tenetur ullam? Asperiores, ex explicabo iure magnam molestias mollitia nostrum odio quam, quas similique tenetur.", "size": [43, 45]}
-]
+    let exit = document.getElementById("exit_cart")
+    exit.addEventListener("click", (e)=>{
+        cartList.innerHTML ="";
+        cartList.style.display = "none"
+    })
 
-createTableOfOrders.createTableOfOrders(testArr);
+    // console.log(cart)
+}
+
+openCartList();
 
 
-// function createListOfOrder(testArr){
-//     for(let i = 0; i < testArr.length; i++){
-//         createTableOfOrders.createTableOfOrders(testArr, i);
-//     }
+
+// if(cartCount.length+1 || cartCount-1){
+// setNameForPoupPup()
+// creatCart.createBoxWish(cartCount);
+// creatCart.createCartFixed(cartCount)//???
+// openCartList(cartCount, "nav_item_cart");
+// openCartList(cartCount, "fixed_cart");
 // }
-// createListOfOrder(testArr)
-createListOfOrder(testArr)
 
-    // createTableOfOrders.createTableOfOrders(testArr, 0);
+
+
+
+
+// function fff(prod) {
+//
+//     let xxx = Array.from(document.getElementsByClassName("remove_item_card"))
+//     xxx = xxx.map((el) => {
+//         // for (let i = 0; i < cartCount.length; i++) {
+//         //     xxx[i].setAttribute("data-remove", i);
+//         // }
+//
+//         el.addEventListener("click", (e) => {
+//             let z = +e.target.dataset.remove;
+//             let c = z + 1;
+//
+//             cartCount.splice(z, c);
+//             console.log(z)
+//             console.log(c);
+//             console.log(cartCount)
+//         })
+//     })
+// }
+
+
+// console.log(cartCount);
+// console.log(cartCount.length)
+// console.log("Z = " +z)
+// console.log("C = " + c)
+
+
+// let x = [{"name":"X1"},{"name":"X2"},{"name":"X3"},{"name":"X4"},{"name":"X5"},{"name":"X6"}];
+// let y = [];
+// let c = [];
+// for(let i = 0; i < 3; i++){
+//     y.push(x[1]);
+// };
+//
+// // y[1].name = "ZZZZ"
+// c = y.slice(1,2);
+//
+// c[0].name = "ZZZ"
+
+
+// let x = [{"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}];
+// let y = x;
+// let newArr = y.map((el) => {
+//     let newObject = {};
+//     Object.keys(el).forEach(propertyKey => {
+//         newObject[propertyKey] = el[propertyKey]
+//     })
+//     return newObject
+// })
+
+
+// console.log(x)
+// console.log(y)
+//
+// newArr[0].name = "ZZZ"
+// console.log(newArr)

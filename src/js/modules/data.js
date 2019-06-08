@@ -42,3 +42,4 @@ export class Data {
     }
 }
 // console.log(+load_products[0].boxSale)
+
