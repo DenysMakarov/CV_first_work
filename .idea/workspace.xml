@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95700656-8fb9-4e29-8a2e-c63f1dd94859" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/sass_modules/_part_10_js_range.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sass_modules/_part_10_js_range.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
@@ -30,17 +28,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_part_10_js_range.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="569" selection-start-line="569" selection-end-line="569" />
+            <state relative-caret-position="3664">
+              <caret line="563" column="35" selection-start-line="563" selection-start-column="35" selection-end-line="563" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="380" column="39" lean-forward="true" selection-start-line="380" selection-start-column="39" selection-end-line="380" selection-end-column="39" />
+            <state relative-caret-position="211">
+              <caret line="396" column="17" selection-start-line="396" selection-start-column="17" selection-end-line="396" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -115,9 +113,9 @@
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_part_7_425px.scss" />
         <option value="$PROJECT_DIR$/src/js/modules/build.js" />
         <option value="$PROJECT_DIR$/src/scss/sass_modules/_part_10_js_range.scss" />
-        <option value="$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss" />
         <option value="$PROJECT_DIR$/src/js/content.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss" />
       </list>
     </option>
   </component>
@@ -238,12 +236,12 @@
       <workItem from="1557150323958" duration="74342000" />
       <workItem from="1557777354512" duration="1775000" />
       <workItem from="1557779170492" duration="1736000" />
-      <workItem from="1557822675436" duration="187788000" />
+      <workItem from="1557822675436" duration="188185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336385000" />
+    <option name="totallyTimeSpent" value="336782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="822" height="816" extended-state="0" />
@@ -442,24 +440,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="100" column="165" selection-start-line="100" selection-start-column="165" selection-end-line="100" selection-end-column="165" />
+        <state relative-caret-position="276">
+          <caret line="12" column="82" lean-forward="true" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_part_10_js_range.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="569" selection-start-line="569" selection-end-line="569" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="380" column="39" lean-forward="true" selection-start-line="380" selection-start-column="39" selection-end-line="380" selection-end-column="39" />
+        <state relative-caret-position="3664">
+          <caret line="563" column="35" selection-start-line="563" selection-start-column="35" selection-end-line="563" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -473,10 +464,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/src/js/modules/build.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="82" lean-forward="true" selection-start-line="12" selection-start-column="82" selection-end-line="12" selection-end-column="82" />
+        <state relative-caret-position="245">
+          <caret line="100" column="165" selection-start-line="100" selection-start-column="165" selection-end-line="100" selection-end-column="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/sass_modules/_part_12_js_cart.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="396" column="17" selection-start-line="396" selection-start-column="17" selection-end-line="396" selection-end-column="17" />
         </state>
       </provider>
     </entry>
