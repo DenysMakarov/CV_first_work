@@ -1,13 +1,10 @@
 
-// import "./js/jquery.min"; through CDN
 
-// import "./js/common";
 import "./js/forms";
 import "./js/content"
 import "./js/slick";
 // import "./css/main.css"     //// импортируем файл для обработки
 import "./scss/main.scss";
-
 import "./js/es5-sham.min"
 import "./js/es5-shim.min"
 

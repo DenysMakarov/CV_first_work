@@ -170,7 +170,6 @@ function showEmount() {
 
 /////////////////////////////
 
-
 // add currency and percent !!!!!!
 function countPercent_AddCurrency(boxSale, down_coast_shoe) {
     let saleForBlock = Array.from(document.getElementsByClassName(boxSale));
@@ -204,7 +203,6 @@ export function sumCartPrice(cartCount) {
 }
 
 
-////////////////////////
 ////////////////////////
 //      //      //      // => about how CAN USE Event through ","
 
@@ -252,136 +250,79 @@ function createCartList() {
                 cartCount.push(products[i]);
                 creatCart.createBoxWish(cartCount);
                 creatCart.createCartFixed(cartCount)//???
+                cartEmpty()
 
 
-                let navItemCart = document.getElementById("cart_summarise_prise").innerHTML = "$" + sumCartPrice(cartCount); // => top cart;
-                let navItemCart425px = document.getElementById("cart_summarise_prise425").innerHTML = "$" + sumCartPrice(cartCount) // => top cart;
+                document.getElementById("cart_summarise_prise").innerHTML = "$" + sumCartPrice(cartCount); // => top cart;
+                document.getElementById("cart_summarise_prise425").innerHTML = "$" + sumCartPrice(cartCount) // => top cart;
             }
         }
     });
 }
 
-function openCartList() {
+function openCartList(cartEl) {
 
-    let cart = document.getElementById("fixed_cart");
+    let cart = document.getElementById(cartEl);
     let cartList = document.getElementById("cart_list");
     cartList.innerHTML = ""
 
     createListOfOrders.createTableOfOrders(cartCount, cartCount);
 
     let removeArr = Array.from(document.getElementsByClassName("remove_item_card"))
-    removeArr = removeArr.map((el)=>{
+    removeArr = removeArr.map((el) => {
         for (let i = 0; i < cartCount.length; i++) {
             removeArr[i].setAttribute("data-remove", i);
         }
     });
 
-    cart.addEventListener("click", (e)=>{
+    cart.addEventListener("click", (e) => {
         cartList.style.display = "block";
-        openCartList()
+        openCartList("fixed_cart")
     });
-    let btn = document.getElementById("buttom_cart_buy");
-    btn.addEventListener("click", (e)=>{
-        console.log("lkj")
-        cartCount.pop()
-        cartList.style.display = "block";
 
-        openCartList()
-    })
 
-        let btnRemove = Array.from(document.getElementsByClassName("remove_item_card"));
-        btnRemove.map((el)=>{
-            el.addEventListener("click", (e)=>{
-                let x = +e.target.dataset.remove;
+    let btnRemove = Array.from(document.getElementsByClassName("remove_item_card"));
+    btnRemove.map((el) => {
+        el.addEventListener("click", (e) => {
+            let x = +e.target.dataset.remove;
 
-                cartCount.splice(x, x)
+            cartCount.splice(x, 1)
 
-                cartList.style.display = "block";
+            cartList.style.display = "block";
+            openCartList("fixed_cart");
 
-                openCartList()
-            })
+            document.getElementById("cart_summarise_prise").innerHTML = "$" + sumCartPrice(cartCount); // => top cart;
+            document.getElementById("cart_summarise_prise425").innerHTML = "$" + sumCartPrice(cartCount) //
+
+            creatCart.createBoxWish(cartCount);
+            creatCart.createCartFixed(cartCount)//???
+            cartEmpty()
         })
-
+    })
 
 
     let exit = document.getElementById("exit_cart")
-    exit.addEventListener("click", (e)=>{
-        cartList.innerHTML ="";
+    exit.addEventListener("click", (e) => {
+        cartList.innerHTML = "";
         cartList.style.display = "none"
     })
 
-    // console.log(cart)
 }
 
-openCartList();
-
-
-
-// if(cartCount.length+1 || cartCount-1){
-// setNameForPoupPup()
-// creatCart.createBoxWish(cartCount);
-// creatCart.createCartFixed(cartCount)//???
-// openCartList(cartCount, "nav_item_cart");
-// openCartList(cartCount, "fixed_cart");
-// }
+openCartList("fixed_cart");
+openCartList("nav_item_cart");
+openCartList("basket425");
 
 
 
 
+function cartEmpty(){
+    if (cartCount.length == 0) {
+        document.getElementById("cordCount").innerHTML = "Empty";
+        document.getElementById("cart_summarise_prise").innerHTML = "$0"
+    }
 
-// function fff(prod) {
-//
-//     let xxx = Array.from(document.getElementsByClassName("remove_item_card"))
-//     xxx = xxx.map((el) => {
-//         // for (let i = 0; i < cartCount.length; i++) {
-//         //     xxx[i].setAttribute("data-remove", i);
-//         // }
-//
-//         el.addEventListener("click", (e) => {
-//             let z = +e.target.dataset.remove;
-//             let c = z + 1;
-//
-//             cartCount.splice(z, c);
-//             console.log(z)
-//             console.log(c);
-//             console.log(cartCount)
-//         })
-//     })
-// }
+}
+cartEmpty()
 
-
-// console.log(cartCount);
-// console.log(cartCount.length)
-// console.log("Z = " +z)
-// console.log("C = " + c)
-
-
-// let x = [{"name":"X1"},{"name":"X2"},{"name":"X3"},{"name":"X4"},{"name":"X5"},{"name":"X6"}];
-// let y = [];
-// let c = [];
-// for(let i = 0; i < 3; i++){
-//     y.push(x[1]);
-// };
-//
-// // y[1].name = "ZZZZ"
-// c = y.slice(1,2);
-//
-// c[0].name = "ZZZ"
-
-
-// let x = [{"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}, {"name": "X1"}];
-// let y = x;
-// let newArr = y.map((el) => {
-//     let newObject = {};
-//     Object.keys(el).forEach(propertyKey => {
-//         newObject[propertyKey] = el[propertyKey]
-//     })
-//     return newObject
-// })
-
-
-// console.log(x)
-// console.log(y)
-//
-// newArr[0].name = "ZZZ"
-// console.log(newArr)
+// document.getElementById("cartBox").innerHTML = "0"

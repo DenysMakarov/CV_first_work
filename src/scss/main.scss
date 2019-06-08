@@ -117,20 +117,17 @@ $bgLighter:#F4E4CB;
 }
 
 
-@import "sass_modules/parth_1_header_nav";
-@import "sass_modules/parth_2_header";
-@import "sass_modules/parth_3_main_content";
-
-@import "sass_modules/jscontent";
-@import "sass_modules/js_range";
-
-@import "sass_modules/parth_4_posts";
-@import "sass_modules/parth_5_slider";
-@import "sass_modules/parth_6_footer";
-// @import "sprite";
-@import "sass_modules/parth_7_425px";
-@import "sass_modules/parth_9_js_poupup";
-@import "sass_modules/parth_9_js_cart";
+@import "sass_modules/part_1_header_nav";
+@import "sass_modules/part_2_header";
+@import "sass_modules/part_3_main_content";
+@import "sass_modules/part_9_login";
+@import "sass_modules/part_10_js_range";
+@import "sass_modules/part_4_posts";
+@import "sass_modules/part_5_slider";
+@import "sass_modules/part_6_footer";
+@import "sass_modules/part_7_425px";
+@import "sass_modules/part_13_js_poupup";
+@import "sass_modules/part_12_js_cart";
 
 
 

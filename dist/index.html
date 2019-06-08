@@ -12,8 +12,7 @@
     <link rel="stylesheet" type="text/css" href="app.css">
     <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="js/slick-1.8.1/slick/slick-theme.css"/>
-    <!--<link rel="stylesheet" type="text/css" href="es5-sham.min.js"/>-->
-    <!--<link rel="stylesheet" type="text/css" href="es5-shim.min.js"/>-->
+
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -25,76 +24,30 @@
 <div class="PouPap" id="PouPap"></div>
 <!--PouPap-->
 
-<div class="cart_list" id="cart_list">
-    <!--<div class="exit_top_block_cart">-->
-        <!--<div class="line_first"></div>-->
-        <!--<div class="line_second"></div>-->
-    <!--</div>-->
-    <!--<div class="box_of_cart" id="box_of_cart">-->
+<!--Cart-->
+<div class="cart_list" id="cart_list"></div>
+<!--Cart-->
 
-        <!--<div class="item_block_top">-->
-            <!--<div class="item_of_card">-->
-                <!--<div class="item_of_card_block_left">-->
-                    <!--<div class="item_of_card_desc item_of_card_title"><span>Title: </span><span-->
-                            <!--class="item_of_card_second_text">Nike</span></div>-->
-                    <!--<div class="item_of_card_desc item_of_card_price"><span>price: </span><span-->
-                            <!--class="item_of_card_second_text">Nike</span></div>-->
-                    <!--<div class="item_of_card_desc item_of_card_size">-->
-                        <!--<span>size: </span>-->
-                        <!--<select class="select_size" name="size" id="size">-->
-                            <!--<option value="">32</option>-->
-                            <!--<option value="">42</option>-->
-                        <!--</select>-->
-                    <!--</div>-->
-                    <!--<div class="remove_item_card">refuse</div>-->
-                <!--</div>-->
-
-                <!--<div class="item_of_card_block_centre"></div>-->
-
-                <!--<div class="item_of_card_block_right">-->
-                    <!--<div class="item_of_card_desc item_of_card_title">-->
-                        <!--<span>Description: </span>-->
-                        <!--<span class="item_of_card_second_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate debitis eos excepturi impedit iusto laborum molestias neque non, nulla, rerum sequi vel vitae? Accusantium animi consequatur delectus distinctio eligendi et eveniet explicabo inventore maiores, minus natus necessitatibus obcaecati officiis praesentium quam suscipit tempora voluptatibus!</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="item_block_bottom">-->
-            <!--<p>-->
-                <!--<span class="item_block_bottom_desc_first">GOODS:</span>-->
-                <!--<span class="item_block_bottom_desc_second">2 items</span>-->
-            <!--</p>-->
-            <!--<p>-->
-                <!--<span class="item_block_bottom_desc_first">SUM: </span>-->
-                <!--<span class="item_block_bottom_desc_second">$ 445</span>-->
-            <!--</p>-->
-            <!--<div class="buttom_cart_buy">BUY</div>-->
-        <!--</div>-->
-    <!--</div>-->
-</div>
-
-<!--cart fixed-->
+<!--Cart fixed-->
 <div class="fixed_cart" id="fixed_cart"></div>
-<!--cart fixed-->
+<!--Cart fixed-->
 
 
-
-<!-- NAN -->
+<!-- NAV -->
 <div class="header_nav_wrap">
     <div class="header_nav">
         <nav>
             <ul class="header_nav_bar">
-                <li class="nav_item item_1">Support</li>
-                <li class="nav_item item_2">Delivery</li>
-                <li class="nav_item">Legal</li>
-                <li class="nav_item">About Us</li>
+                <li class="nav_item item_1"><a href="#contacts">Support</a></li>
+                <li class="nav_item item_2"><a href="#contacts">Delivery</a></li>
+                <li class="nav_item"><a href="#news">News</a></li>
+                <li class="nav_item"><a href="#contacts">About Us</a></li>
             </ul>
             <ul class="header_nav_bar_right">
                 <li class="nav_item" id="nav_item_cart"><i class="basket fas fa-shopping-basket" id="basket"></i><span
                         id="cart_summarise_prise">$0</span></li>
-                <li class="nav_item">Login</li>
-                <li class="nav_item">Register</li>
+                <li class="nav_item"><a href="#js">Login</a></li>
+                <li class="nav_item"><a href="#js">JS Content</a></li>
             </ul>
         </nav>
     </div>
@@ -102,7 +55,7 @@
 <div class="top_menu_425">
     <p class="menu_425_item item_425_1">Support</p>
     <p class="menu_425_item item_425_2">Delivery</p>
-    <p class="menu_425_item item_425_3">Legal</p>
+    <p class="menu_425_item item_425_3"><a href="#news">News</a></p>
     <p class="menu_425_item item_425_4">About Us</p>
 </div>
 
@@ -131,8 +84,8 @@
     </div>
 </div>
 <div class="under_nav_425">
-    <p class="menu_425_item item_425_5">Login</p>
-    <p class="menu_425_item item_425_6">Register</p>
+    <p class="menu_425_item item_425_5"><a href="#js">Login</a></p>
+    <p class="menu_425_item item_425_6"><a href="#js">JS Content</a></p>
     <p class="menu_425_item item_425_7"><i class="basket fas fa-shopping-basket" id="basket425"></i><span
             id="cart_summarise_prise425">$0</span></p>
     <p class="menu_425_item item_425_8"></p>
@@ -147,11 +100,10 @@
         </div>
     </div>
 </div>
-<!-- NAN -->
+<!-- NAV -->
 
 
-<!-- MAIN CONTENT -->
-
+<!-- MAIN CONTENT  => only HTML / CSS-->
 <div class="undernav_cover_wrap">
     <div class="undernav_cover">
         <div class="undernav_cover_left">
@@ -180,7 +132,6 @@
 </div>
 
 <figure class="main_discription">
-
     <div class="main_discription_top">
         <div class="main_discription_top_left_shoes">
 
@@ -487,8 +438,8 @@
 </div>
 <!-- MAIN CONTENT -->
 
-
 <!--Js content-->
+<a name="js" href=""></a>
 
 <div class="js_content_box_wrap" id="js_content_box_wrap">
     <div class="js_content_box" id="js_content_box">
@@ -703,7 +654,7 @@
 <!-- POSTS -->
 
 <!-- SLIDER -->
-
+<a name="news"></a>
 <div class="over_slider_text">
     <p class="over_slider_text_word">L</p>
     <p class="over_slider_text_word">A</p>
@@ -1019,6 +970,8 @@
 
 
 <!-- FOOTER -->
+<a name="contacts"></a>
+
 <footer class="footer">
     <div class="footer_row_one">
         <div class="footer_row_one_item footer_item_1">

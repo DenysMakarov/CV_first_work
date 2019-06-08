@@ -98,7 +98,7 @@ export class Builder {
         let cartBox = Builder.appChild(Builder.createNewElement("div", "cartBox", null, [{
             "name": "id",
             "value": "cartBox"
-        }]), [Builder.createNewElement("i", "fas fa-cart-arrow-down"), Builder.createNewElement("p", "cordCount", cartCount.length)]);
+        }]), [Builder.createNewElement("i", "fas fa-cart-arrow-down"), Builder.createNewElement("p", "cordCount", cartCount.length, [{"name":"id", "value":"cordCount"}])]);
         return cartWrapBox.appendChild(cartBox)
 
     }
