@@ -33,7 +33,6 @@ let btn_search = document.getElementById("btn_search");
 let copyProd = [];
 let mainProd = copyProd.concat(products);
 
-
 function shareRender(prod) {
     renderProd(prod);
     renderPag(prod);
@@ -94,7 +93,7 @@ function cheangePag(prod) {
 }
 
 function optionSex(prod, sexTarget) {
-    let filterProd = prod.filter(el => el.sex == sexTarget);
+    let filterProd = prod.filter(el => el.sex === sexTarget);
     return filterProd
 }
 
@@ -109,9 +108,10 @@ changeMan.addEventListener("click", (e) => {
 changeWoman.addEventListener("click", (e) => {
     current = 0;
     mainProd = optionSex(products, woman);  // from modules
-    shareRender(mainProd);
-    searchProd(mainProd);
-    return mainProd
+    console.log(mainProd)
+        shareRender(mainProd);
+        searchProd(mainProd);
+        return mainProd
 });
 changeChildren.addEventListener("click", (e) => {
     current = 0;
@@ -125,7 +125,9 @@ changeAll.addEventListener("click", (e) => {
     mainProd = products;
     shareRender(mainProd);
     searchProd(mainProd);
+    return mainProd
 });
+
 
 
 function search(prod) {
@@ -138,7 +140,6 @@ function search(prod) {
 }
 
 function searchProd(prod) {
-    let searchProd;
     btn_search.addEventListener("click", (e) => {
         if (searchForm.value == "") {
             // boxContent.innerHTML ="hDJLHSDJKhLHJKD"
@@ -318,14 +319,13 @@ openCartList("basket425");
 
 function cartEmpty(){
     if (cartCount.length == 0) {
-        document.getElementById("cordCount").innerHTML = "Empthy";
-        document.getElementById("fixed_cart").style.width = "150px";
+        document.getElementById("cordCount").innerHTML = "Empty";
+        document.getElementById("fixed_cart").style.width = "130px";
 
         document.getElementById("cart_summarise_prise").innerHTML = "$0"
     }else if(cartCount.length != 0){
         document.getElementById("fixed_cart").style.width = "60px";
     }
-
 }
 cartEmpty()
 

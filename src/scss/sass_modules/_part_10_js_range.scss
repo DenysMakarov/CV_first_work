@@ -36,10 +36,8 @@
   @media screen and(max-width: 426px){
     height: 100%;
     top: -40px;
-    //margin-top: 50px;
   }
 }
-
 
 
 .option_content{
@@ -148,13 +146,6 @@
   @media screen and(max-width: 426px){
     height: 10%;
   }
-
-
-
-    //.search_content_left{
-    //  width: 20%;
-    //  height: 100%;
-    //}
 
     .search_content_center{
       -webkit-box-sizing: border-box;
@@ -302,9 +293,8 @@
   flex-direction: row;
   justify-content: space-evenly;
   padding: 25px;
-  //padding-top: 50px;
   flex-wrap: wrap;
-  overflow: auto;
+  //overflow: auto;
 
   @media screen and(max-width: 426px){
     flex-direction: column;
@@ -504,8 +494,6 @@
             -6px 5px rgb(163,163,163), -6px 6px rgb(122,122,122),
             -7px 6px rgb(162,162,162), -7px 7px rgb(121,121,121),
             -8px 7px rgb(161,161,161), -8px 8px rgb(120,120,120);
-
-
   }
   .active_pag{
     margin-left: 10px;
@@ -538,10 +526,7 @@
       -5px 4px rgb(57, 27, 15), -5px 5px rgb(80, 40, 24),
       -6px 5px rgb(56, 26, 14), -6px 6px rgb(79, 39, 23),
       -7px 6px rgb(55, 25, 13), -7px 7px rgb(78, 38, 22);
-
       margin-top: 0;
-
-
     }
   }
 }
